@@ -288,6 +288,8 @@ ItemDefinition::ItemDefinition()
 	PlaceableDefPitch = 0.0f;
 	PlaceableDefRoll = 0.0f;
 	bInteractiveObject = false;
+	ConvertItemID = 0;
+	memset(ConvertItemName, 0, sizeof(ConvertItemName));
 	SocketSubClassCount = 0;
 	memset(SocketSubClass, 0, sizeof(SocketSubClass));
 }
@@ -306,7 +308,6 @@ ItemBase::ItemBase()
 	Luck = 0;
 	ID = 0;
 	MerchantSlot = 0;
-	ConvertItemID = 0;
 	DontKnow = 0;
 	NoDropFlag = 0;
 	LastCastTime = 0;

@@ -44,7 +44,7 @@ struct [[offsetcomments]] MonsterMissionTemplate
 /*0x0c*/ int  NumSelected;
 /*0x10*/ bool CanSelect;
 /*0x11*/ char TemplateName[0x40];
-/*0x54*/
+/*0x51*/
 };
 
 struct [[offsetcomments]] PCSharedTaskData
@@ -113,6 +113,7 @@ struct [[offsetcomments]] CTaskElement
 /*0x084*/ char               TargetZoneID[0x40];
 /*0x0c4*/ int                RequiredCount;
 /*0x0c8*/ bool               bOptional;
+/*0x0c9*/ uint8_t            Unknown0xc9[0x3];
 /*0x0cc*/ TaskGroupType      ElementGroup;
 /*0x0d0*/ int                DZSwitchID;
 /*0x0d4*/ char               ElementDescriptionOverride[0x80];
@@ -125,7 +126,7 @@ struct [[offsetcomments]] CTaskElement
 
 const int MAX_TASK_ELEMENTS = 20;
 
-constexpr size_t CTaskEntry_size = 0x3D70; // @sizeof(CTaskEntry) :: 2026-03-10 (live) @ 0x140529C47
+constexpr size_t CTaskEntry_size = 0x3D70; // @sizeof(CTaskEntry) :: 2026-05-26 (live) @ 0x14052C12E
 
 struct [[offsetcomments]] CTaskEntry
 {

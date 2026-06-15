@@ -50,7 +50,7 @@ enum EPlace
 	CanPlaceAndGoto,
 };
 
-constexpr size_t zoneHeader_size = 0x2A4; // @sizeof(zoneHeader) :: 2026-03-10 (live) @ 0x140E95CD4
+constexpr size_t zoneHeader_size = 0x2A4; // @sizeof(zoneHeader) :: 2026-05-26 (live) @ 0x140EB27B4
 
 struct [[offsetcomments]] zoneHeader
 {
@@ -67,15 +67,15 @@ struct [[offsetcomments]] zoneHeader
 /*0x190*/ int          FilterID;
 /*0x194*/ int          Unknown1;
 /*0x198*/ float        FogDensity;
-/*0x19c*/ float        FogStart[4];
+/*0x19c*/ float        FogStart[4];  // unverified: no recovery signal, offset is a guess
 /*0x1ac*/ float        FogEnd[4];
-/*0x1bc*/ uint8_t      FogRed[4];
+/*0x1bc*/ uint8_t      FogRed[4];  // unverified: no recovery signal, offset is a guess
 /*0x1c0*/ uint8_t      FogGreen[4];
-/*0x1c4*/ uint8_t      FogBlue[4];
-/*0x1c8*/ uint8_t      RainChance[4];
-/*0x1cc*/ uint8_t      RainDuration[4];
+/*0x1c4*/ uint8_t      FogBlue[4];  // unverified: no recovery signal, offset is a guess
+/*0x1c8*/ uint8_t      RainChance[4];  // unverified: no recovery signal, offset is a guess
+/*0x1cc*/ uint8_t      RainDuration[4];  // unverified: no recovery signal, offset is a guess
 /*0x1d0*/ uint8_t      SnowChance[4];
-/*0x1d4*/ uint8_t      SnowDuration[4];
+/*0x1d4*/ uint8_t      SnowDuration[4];  // unverified: no recovery signal, offset is a guess
 /*0x1d8*/ uint8_t      PrecipitationType;
 /*0x1dc*/ float        BloomIntensity;
 /*0x1e0*/ float        ZoneGravity;
@@ -142,23 +142,6 @@ struct [[offsetcomments]] zoneHeader
 /*0x2a3*/ bool         bUnknown9;
 /*0x2a4*/
 
-	// these need to be figured out:
-// /*0x219*/ char         ZoneTimeZone;   //in hours from worldserver, can be negative
-// /*0x268*/ uint32_t     GraveyardTimer; //minutes until corpse(s) pops to graveyard
-// /*0x28c*/ int          ScriptIDAdventureFailed;
-// /*0x290*/ int          CanExploreTasks;
-// /*0x324*/ float        WeatherChangeTime;
-// /*0x338*/ int          ScriptNPCReceivedanItem;
-// /*0x33c*/ bool         bCheck;
-// /*0x340*/ int          ScriptIDSomething;
-// /*0x344*/ int          ScriptIDSomething2;
-// /*0x348*/ int          ScriptIDSomething3;
-// /*0x35c*/ bool         bNoFlux;
-// /*0x380*/ bool         bNoMercenaries;
-// /*0x000*/ int WaterMidi, DayMidi, NightMidi;
-// /*0x000*/ bool bAdjustGamma
-// /*0x3a8*/
-
 	inline bool IsIndoor() {
 		return ZoneType == IndoorDungeon || ZoneType == DungeonCity || ZoneType == IndoorCity;
 	}
@@ -190,12 +173,13 @@ public:
 	EQLIB_OBJECT int CastSpell(const CVector3& pos);
 
 /*0x00*/ int             slot;           // the gem the spell below is memmed in... 0-11
+/*0x04*/ uint8_t         Unknown0x4[0x4];
 /*0x08*/ PSPELL          spell;
 /*0x10*/ ItemGlobalIndex itemLocation;
 /*0x1c*/ ItemSpellTypes  itemSpellType;
 /*0x20*/ float           rangeSquared;
 /*0x24*/ bool            cursorVisible;
-/*0x28*/
+/*0x25*/
 };
 
 using CTargetRing DEPRECATE("Use FreeTargetTracker instead of CTargetRing") = CTargetRing;
@@ -214,7 +198,7 @@ struct [[offsetcomments]] EQSuccessfulHit
 /*0x11*/ float         HitHeading;
 /*0x15*/ float         HitPitch;
 /*0x19*/ bool          bSecondary;
-/*0x1a*/ uint8_t       Unknown0x1A[6];
+/*0x1a*/ uint8_t       Unknown0x1a[0x6];
 /*0x20*/
 };
 #pragma pack(pop)
@@ -251,7 +235,7 @@ struct [[offsetcomments]] EQCameraOptions
 /*0x10*/ float             pitch;
 /*0x14*/ float             zoom;
 /*0x18*/ bool              changeable;
-/*0x1c*/
+/*0x19*/
 };
 
 struct [[offsetcomments]] EQGameOptions
@@ -314,7 +298,7 @@ struct [[offsetcomments]] EQGameOptions
 
 
 // size of EverQuestinfo is the distance from this byte to the end of the struct
-constexpr size_t EverQuestinfo_size = 0x75278; // @sizeof(EverQuestinfo) :: 2026-03-10 (live) @ 0x140E95AE0
+constexpr size_t EverQuestinfo_size = 0x75278; // @sizeof(EverQuestinfo) :: 2026-05-26 (live) @ 0x140EB25C0
 
 struct [[offsetcomments]] EverQuestinfo
 {
@@ -335,6 +319,7 @@ struct [[offsetcomments]] EverQuestinfo
 /*0x0003c*/ int               ScreenXRes;
 /*0x00040*/ int               ScreenYRes;
 /*0x00044*/ bool              FullscreenMode;
+/*0x00045*/ uint8_t           Unknown0x45[0x3];
 /*0x00048*/ eKeyboardMode     KeyboardMode;
 /*0x0004c*/ uint8_t           RunMode;
 /*0x0004d*/ uint8_t           MouseCntrl;
@@ -482,6 +467,7 @@ struct [[offsetcomments]] EverQuestinfo
 /*0x00964*/ uint8_t           MyVehicleFound;
 /*0x00965*/ uint8_t           ZoneFindingVehicle;
 /*0x00966*/ uint8_t           ForceSendVehicleUpdate;
+/*0x00967*/ uint8_t           Unknown0x967[0x1];
 /*0x00968*/ ZONE_REQ_STATUS   GotSafeCoords;
 /*0x0096c*/ int               ZoningTo;
 /*0x00970*/ char              AFKMessage[256];
@@ -606,7 +592,8 @@ struct [[offsetcomments]] EverQuestinfo
 /*0x75268*/ int               RequestPending;
 /*0x7526c*/ uint32_t          ItemPendingTime;
 /*0x75270*/ uint32_t          RequestPendingTime;
-/*0x75274*/
+/*0x75274*/ uint8_t           Unknown0x75274[0x4];
+/*0x75278*/
 };
 
 SIZE_CHECK(EverQuestinfo, EverQuestinfo_size);
@@ -716,7 +703,7 @@ public:
 };
 
 
-constexpr size_t CEverQuest_size = 0x19708; // @sizeof(CEverQuest) :: 2026-03-10 (live) @ 0x14034FED3
+constexpr size_t CEverQuest_size = 0x19710; // @sizeof(CEverQuest) :: 2026-05-26 (live) @ 0x140351963
 
 class [[offsetcomments]] CEverQuest : public CEverQuestBase, public UniversalChatProxyHandler, public PopDialogHandler
 {

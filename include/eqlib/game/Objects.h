@@ -25,7 +25,7 @@ namespace eqlib {
 class PlayerClient;
 class CParticleCloudInterface;
 
-constexpr size_t EQGroundItem_size = 0xA0; // @sizeof(EQGroundItem) :: 2026-03-10 (live) @ 0x1401FFC3F
+constexpr size_t EQGroundItem_size = 0xA0; // @sizeof(EQGroundItem) :: 2026-05-26 (live) @ 0x14020082F
 
 class [[offsetcomments]] EQGroundItem
 {
@@ -47,7 +47,8 @@ public:
 /*0x90*/ float            X;
 /*0x94*/ float            Z;
 /*0x98*/ int              Weight;                   // -1 means it can't be picked up
-/*0x9c*/
+/*0x9c*/ uint8_t          Unknown0x9c[0x4];
+/*0xa0*/
 
 	DEPRECATE("Use Item instead of ID/pContents") inline ItemPtr get_ID() const { return Item; }
 	DEPRECATE("Use Item instead of ID/pContents") inline void set_ID(ItemPtr ptr) { Item = ptr; }
@@ -134,7 +135,7 @@ public:
 	static EQObject* top;
 };
 
-constexpr size_t EQSwitch_size = 0x108; // @sizeof(EQSwitch) :: 2026-03-10 (live) @ 0x1401F6C10
+constexpr size_t EQSwitch_size = 0x108; // @sizeof(EQSwitch) :: 2026-05-26 (live) @ 0x1401F777D
 
 class [[offsetcomments]] EQSwitch : public CActorApplicationData
 {
@@ -205,6 +206,7 @@ public:
 /*0x0fc*/ float                    unknownFloat1;
 /*0x100*/ float                    unknownFloat2;
 /*0x104*/ bool                     unknownBool1;
+/*0x105*/ uint8_t                  Unknown0x105[0x3];
 /*0x108*/
 	ALT_MEMBER_GETTER_DEPRECATED(CActorInterface*, pActor, pSwitch, "Use pActor instead of pSwitch");
 };

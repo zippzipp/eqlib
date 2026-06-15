@@ -305,14 +305,14 @@ public:
 /*0x2c*/ bool                     bAllowMultiSelect = false;
 /*0x30*/ int                      nSelectionLimit = -1;
 /*0x34*/ bool                     bAllowNullable = false;
-/*0x38*/
+/*0x35*/
 };
 
 //============================================================================
 // CButtonWnd
 //============================================================================
 
-constexpr size_t CButtonWnd_size = 0x348; // @sizeof(CButtonWnd) :: 2026-03-10 (live) @ 0x1405F35E0
+constexpr size_t CButtonWnd_size = 0x348; // @sizeof(CButtonWnd) :: 2026-05-26 (live) @ 0x1405F6210
 
 class [[offsetcomments]] CButtonWnd : public CXWnd
 {
@@ -829,7 +829,8 @@ public:
 /*0x280*/ CXStr        Text;
 /*0x288*/ CXStr        AppendText;
 /*0x290*/ bool         bTextDirty;
-/*0x294*/
+/*0x291*/ uint8_t      Unknown0x291[0x7];
+/*0x298*/
 };
 
 //============================================================================
@@ -864,7 +865,7 @@ struct [[offsetcomments]] STreeData
 {
 /*0x00*/ int                      Depth = 0;
 /*0x04*/ bool                     bIsExpandable = false;
-/*0x08*/
+/*0x05*/
 };
 
 struct [[offsetcomments]] SListWndCell
@@ -928,7 +929,7 @@ struct [[offsetcomments]] SListWndColumn
 /*0x40*/ CTextureAnimation*       pMouseOver = nullptr;
 /*0x48*/ CXStr                    Tooltip;
 /*0x50*/ bool                     bResizable = false;
-/*0x54*/
+/*0x51*/
 
 	SListWndColumn(CXStr strLabel = "",
 		int width = 0,
@@ -1551,7 +1552,7 @@ public:
 /*0x31d*/ bool                       dividerMoving;
 /*0x320*/ int                        oldPosCoord;              // X for horizontal, Y for vertical
 /*0x324*/ bool                       bStyle_Dividers;          // the Style_Dividers property from XML
-/*0x328*/
+/*0x325*/
 };
 
 class [[offsetcomments]] CVerticalLayoutWnd : public CLayoutWnd
@@ -1564,7 +1565,7 @@ public:
 /*0x31d*/ bool                       dividerMoving;
 /*0x320*/ int                        oldPosCoord;              // X for horizontal, Y for vertical
 /*0x324*/ bool                       bStyle_Dividers;          // the Style_Dividers property from XML
-/*0x328*/
+/*0x325*/
 };
 
 class [[offsetcomments]] CTileLayoutWnd : public CLayoutWnd
@@ -1909,7 +1910,7 @@ public:
 // CBankWnd
 //============================================================================
 
-constexpr size_t CBankWnd_size = 0x2360; // @sizeof(CBankWnd) :: 2026-03-10 (live) @ 0x14019C3D6
+constexpr size_t CBankWnd_size = 0x2360; // @sizeof(CBankWnd) :: 2026-05-26 (live) @ 0x14019C796
 
 class [[offsetcomments]] CBankWnd : public CGFScreenWnd, public WndEventHandler
 {
@@ -2214,7 +2215,7 @@ struct [[offsetcomments]] BazaarSearchResults
 /*0xa0*/ int        statNum = 0;
 /*0xa4*/ float      statNumFloat = 0.f;
 /*0xa8*/ EqItemGuid itemGuid;
-/*0xbc*/
+/*0xba*/
 };
 
 // CBazaarSearchWnd_size: 0x9720
@@ -2389,7 +2390,7 @@ enum BuffWindowType
 	BuffWindowShortDuration,
 };
 
-constexpr size_t CBuffWindow_size = 0x350; // @sizeof(CBuffWindow) :: 2026-03-10 (live) @ 0x14019BEFA
+constexpr size_t CBuffWindow_size = 0x350; // @sizeof(CBuffWindow) :: 2026-05-26 (live) @ 0x14019C2BA
 
 class [[offsetcomments]] CBuffWindow : public CSidlScreenWnd, public WndEventHandler
 {
@@ -3114,7 +3115,7 @@ inline namespace deprecated {
 
 constexpr int MAX_CONTAINERS = 45;
 
-constexpr size_t CContainerMgr_size = 0x1B0; // @sizeof(CContainerMgr) :: 2026-03-10 (live) @ 0x14019AEE9
+constexpr size_t CContainerMgr_size = 0x1B0; // @sizeof(CContainerMgr) :: 2026-05-26 (live) @ 0x14019B2A9
 
 class [[offsetcomments]] CContainerMgr
 {
@@ -3150,7 +3151,8 @@ public:
 /*0x1a0*/ int                WorldContainerRealEstateItemID;
 /*0x1a4*/ DWORD              Timer;
 /*0x1a8*/ bool               bShowDone;
-/*0x1ac*/
+/*0x1a9*/ uint8_t            Unknown0x1a9[0x7];
+/*0x1b0*/
 
 	ItemClient* getter_pWorldContainer() { return WorldContainer.get(); }
 	__declspec(property(get = getter_pWorldContainer)) ItemClient* pWorldContainer;
@@ -3292,7 +3294,7 @@ enum ECursorAttachmentType
 	eCursorAttachment_EquipmentKeyRingLink,
 };
 
-constexpr size_t CCursorAttachment_size = 0x648; // @sizeof(CCursorAttachment) :: 2026-03-10 (live) @ 0x14019B293
+constexpr size_t CCursorAttachment_size = 0x648; // @sizeof(CCursorAttachment) :: 2026-05-26 (live) @ 0x14019B653
 
 class [[offsetcomments]] CCursorAttachment : public CGFScreenWnd, public WndEventHandler
 {
@@ -3458,7 +3460,7 @@ public:
 // CFindItemWnd
 //============================================================================
 
-constexpr size_t CFindItemWnd_size = 0x400; // @sizeof(CFindItemWnd) :: 2026-03-10 (live) @ 0x14019C7FB
+constexpr size_t CFindItemWnd_size = 0x400; // @sizeof(CFindItemWnd) :: 2026-05-26 (live) @ 0x14019CBBB
 
 class [[offsetcomments]] CFindItemWnd : public CSidlScreenWnd, public WndEventHandler
 {
@@ -3496,6 +3498,7 @@ public:
 /*0x2d8*/ uint32_t            Unknown2;
 /*0x2dc*/ uint32_t            Timestamp;
 /*0x2e0*/ uint32_t            Counter;
+/*0x2e4*/ uint8_t             Unknown0x2e4[0x4];
 /*0x2e8*/ ItemContainer       Container;
 /*0x310*/ HashTable<ItemRecord, int> Items;
 /*0x328*/ HashTable<SoeUtil::String, int> ItemNames;     // just a guess, likely inaccurate.
@@ -3544,7 +3547,7 @@ enum FindLocationType {
 };
 EQLIB_API const char* FindLocationTypeToString(FindLocationType type);
 
-constexpr size_t CFindLocationWnd_size = 0x7C0; // @sizeof(CFindLocationWnd) :: 2026-03-10 (live) @ 0x14019CFB9
+constexpr size_t CFindLocationWnd_size = 0x7C0; // @sizeof(CFindLocationWnd) :: 2026-05-26 (live) @ 0x14019D379
 
 class [[offsetcomments]] CFindLocationWnd : public CGFScreenWnd
 {
@@ -3758,7 +3761,7 @@ public:
 // CGiveWnd
 //============================================================================
 
-constexpr size_t CGiveWnd_size = 0xB50; // @sizeof(CGiveWnd) :: 2026-03-10 (live) @ 0x14019CA6B
+constexpr size_t CGiveWnd_size = 0xB50; // @sizeof(CGiveWnd) :: 2026-05-26 (live) @ 0x14019CE2B
 
 class [[offsetcomments]] CGiveWnd : public CGFScreenWnd, public PopDialogHandler, public WndEventHandler
 {
@@ -3947,7 +3950,7 @@ public:
 // CGroupWnd
 //============================================================================
 
-constexpr size_t CGroupWnd_size = 0x4728; // @sizeof(CGroupWnd) :: 2026-03-10 (live) @ 0x14019BA12
+constexpr size_t CGroupWnd_size = 0x4728; // @sizeof(CGroupWnd) :: 2026-05-26 (live) @ 0x14019BDD2
 
 class [[offsetcomments]] CGroupWnd : public CGFScreenWnd
 {
@@ -4301,7 +4304,7 @@ public:
 /*0x143c*/ bool                  bTrophyTributeCostOutofSync;
 /*0x143d*/ bool                  bTrophyTributeActive;
 /*0x143e*/ bool                  bTrophyBenefitsLocked;
-/*0x1440*/
+/*0x143f*/
 
 	EQLIB_OBJECT bool ValidGuildName(int);
 	EQLIB_OBJECT char* GetGuildMotd();
@@ -4479,6 +4482,7 @@ public:
 /*0x3c0*/ bool            ShowKeyMap;
 /*0x3c1*/ bool            ShowSpinner;
 /*0x3c2*/ bool            LastShowSpinner;
+/*0x3c3*/ uint8_t         Unknown0x3c3[0x1];
 /*0x3c4*/ FontStyles      TextFontStyle;
 /*0x3c8*/ CXStr           KeyMapStrings[HOTBUTTONS_PER_PAGE];
 /*0x428*/ CButtonWnd*     FileButton;                      // HB_FileButton
@@ -4491,7 +4495,7 @@ public:
 /*0x458*/ int             HotWindowIndex;
 /*0x45c*/ int             ConfirmId;
 /*0x460*/ bool            KeepCurrentSize;
-/*0x464*/
+/*0x461*/
 };
 
 //============================================================================
@@ -4536,7 +4540,6 @@ public:
 	EQLIB_OBJECT void Init();
 	EQLIB_OBJECT void UpdateMoneyDisplay();
 
-/*0x03cc*/ uint8_t     Unknown0x03ac[0xdbc];
 /*0x1188*/ int64_t     VitalityCap;
 /*0x1190*/ int         AAVitalityCap;
 /*0x1194*/
@@ -4553,7 +4556,7 @@ inline namespace deprecated {
 
 class CInvSlotWnd;
 
-constexpr size_t CInvSlot_size = 0x28; // @sizeof(CInvSlot) :: 2026-03-10 (live) @ 0x140420822
+constexpr size_t CInvSlot_size = 0x28; // @sizeof(CInvSlot) :: 2026-05-26 (live) @ 0x140422DA2
 
 class [[offsetcomments]] CInvSlot
 {
@@ -4590,7 +4593,8 @@ public:
 /*0x1d*/ bool               bUsable;
 /*0x1e*/ bool               bLocked;
 /*0x20*/ uint32_t           LastUpdate;
-/*0x24*/
+/*0x24*/ uint8_t            Unknown0x24[0x4];
+/*0x28*/
 };
 
 SIZE_CHECK(CInvSlot, CInvSlot_size);
@@ -4600,7 +4604,7 @@ SIZE_CHECK(CInvSlot, CInvSlot_size);
 
 constexpr int MAX_INV_SLOTS = 4000;  // CInvSlotMgr::CreateInvSlot
 
-constexpr size_t CInvSlotMgr_size = 0x7D88; // @sizeof(CInvSlotMgr) :: 2026-03-10 (live) @ 0x14019AE27
+constexpr size_t CInvSlotMgr_size = 0x7D88; // @sizeof(CInvSlotMgr) :: 2026-05-26 (live) @ 0x14019B1E7
 
 class [[offsetcomments]] CInvSlotMgr
 {
@@ -4634,6 +4638,7 @@ public:
 /*0x7d20*/ CInvSlot*    pFindSelectedItem;
 /*0x7d28*/ bool         bToggleBagsOpen;
 /*0x7d29*/ bool         bToggleBankBagsOpen;
+/*0x7d2a*/ uint8_t      Unknown0x7d2a[0x6];
 /*0x7d30*/ SoeUtil::Map<uint32_t, ItemGlobalIndex>        LockedSlots;     // Multimap of container slot to locked items in container
 /*0x7d48*/ eqstd::unordered_map<eqstd::string, CInvSlot*> RegisteredSlots; // Gameface-registered inventory slots
 /*0x7d88*/
@@ -4644,7 +4649,7 @@ SIZE_CHECK(CInvSlotMgr, CInvSlotMgr_size);
 
 //----------------------------------------------------------------------------
 
-constexpr size_t CInvSlotWnd_size = 0x460; // @sizeof(CInvSlotWnd) :: 2026-03-10 (live) @ 0x140508B0C
+constexpr size_t CInvSlotWnd_size = 0x460; // @sizeof(CInvSlotWnd) :: 2026-05-26 (live) @ 0x14050AFD9
 
 class [[offsetcomments]] CInvSlotWnd : public CButtonWnd
 {
@@ -4743,7 +4748,7 @@ enum ItemDisplayFlags
 	FROM_BARTER_SEARCH = 0x00000010
 };
 
-constexpr size_t CItemDisplayWnd_size = 0xAA8; // @sizeof(CItemDisplayWnd) :: 2026-03-10 (live) @ 0x140440E54
+constexpr size_t CItemDisplayWnd_size = 0xAB0; // @sizeof(CItemDisplayWnd) :: 2026-05-26 (live) @ 0x140442D24
 
 class [[offsetcomments]] CItemDisplayWnd : public CSidlScreenWnd
 {
@@ -4810,40 +4815,42 @@ public:
 /*0x418*/ CLabel*           ModButtonLabel;                // IDW_ModButtonLabel // 3e8
 /*0x420*/ CStmlWnd*         RewardButtonLabel;             // IDW_RewardButtonLabel
 /*0x428*/ CStmlWnd*         ConvertStml;                   // IDW_ConvertButtonLabel
-/*0x430*/ CLabel*           FuseButtonLabel;               // IDW_FuseButtonLabel
-/*0x438*/ CLabel*           MadeByLabel;                   // IDW_MadeBy
-/*0x440*/ CLabel*           CollectedLabel;                // IDW_CollectedLabel
-/*0x448*/ CLabel*           ScribedLabel;                  // IDW_ScribedLabel
-/*0x450*/ int               Row;
-/*0x454*/ bool              bAntiTwink;
-/*0x458*/ CButtonWnd*       ModButton;                     // IDW_ModButton
-/*0x460*/ CButtonWnd*       RewardButton;                  // IDW_RewardButton
-/*0x468*/ CButtonWnd*       PrintRealEstateItems;          // IDW_PrintRealEstateItems
-/*0x470*/ CButtonWnd*       ConvertButton;                 // IDW_ConvertButton
-/*0x478*/ CButtonWnd*       FuseButton;                    // IDW_FuseButton // 448
-/*0x480*/ bool              bCollected;
-/*0x481*/ bool              bCollectedReceived;
-/*0x484*/ int               Unknown0x0314;
-/*0x488*/ CXStr             ItemName;
-/*0x490*/ bool              bScribed;
-/*0x491*/ bool              bScribedReceived;
-/*0x494*/ int               group[6];
-/*0x4ac*/ int               showModified;
-/*0x4b0*/ int               heroicCount;
-/*0x4b4*/ int               itemInfoCount;
-/*0x4b8*/ CStmlWnd*         lblItemInfo[NumItemInfo];      // IDW_ItemInfo%d
-/*0x520*/ CLabel*           lblStat[NumStatRows][NumStatCols];      // IDW_Row%dCol%dStat
-/*0x790*/ CLabel*           lblValue[NumStatRows][NumStatCols];     // IDW_Row%dCol%dValue
-/*0xa00*/ CLabel*           lblHeroic[NumHeroic];          // IDW_Heroic%d 9d0
-/*0xa68*/ int               rightClickMenuId;
-/*0xa6c*/ int               rightClickMenuSocketId;
-/*0xa70*/ CComboWnd*        ItemCompareList;               // IDW_ItemCompareList // a40
-/*0xa78*/ bool              isComparing;                   // this and the next are a guess. Need to verify.
-/*0xa80*/ ItemPtr           pCompareItem;
-/*0xa90*/ CTAFrameDraw*     ptaPageBorderHighlight;        // FT_DefPageBorderHighlight // a60
-/*0xa98*/ CTAFrameDraw*     ptaPageBorder;                 // FT_DefPageBorder // a68
-/*0xaa0*/ uint32_t          ItemWndIndex;
-/*0xaa4*/
+/*0x430*/ uint8_t                                          Unknown0x430[0x8];
+/*0x438*/ CLabel*           FuseButtonLabel;               // IDW_FuseButtonLabel
+/*0x440*/ CLabel*           MadeByLabel;                   // IDW_MadeBy
+/*0x448*/ CLabel*           CollectedLabel;                // IDW_CollectedLabel
+/*0x450*/ CLabel*           ScribedLabel;                  // IDW_ScribedLabel
+/*0x458*/ int               Row;
+/*0x45c*/ bool              bAntiTwink;
+/*0x460*/ CButtonWnd*       ModButton;                     // IDW_ModButton
+/*0x468*/ CButtonWnd*       RewardButton;                  // IDW_RewardButton
+/*0x470*/ CButtonWnd*       PrintRealEstateItems;          // IDW_PrintRealEstateItems
+/*0x478*/ CButtonWnd*       ConvertButton;                 // IDW_ConvertButton
+/*0x480*/ CButtonWnd*       FuseButton;                    // IDW_FuseButton // 448
+/*0x488*/ bool              bCollected;
+/*0x489*/ bool              bCollectedReceived;
+/*0x48c*/ int               Unknown0x0314;
+/*0x490*/ CXStr             ItemName;
+/*0x498*/ bool              bScribed;
+/*0x499*/ bool              bScribedReceived;
+/*0x49c*/ int               group[6];
+/*0x4b4*/ int               showModified;
+/*0x4b8*/ int               heroicCount;
+/*0x4bc*/ int               itemInfoCount;
+/*0x4c0*/ CStmlWnd*         lblItemInfo[NumItemInfo];      // IDW_ItemInfo%d
+/*0x528*/ CLabel*           lblStat[NumStatRows][NumStatCols];      // IDW_Row%dCol%dStat
+/*0x798*/ CLabel*           lblValue[NumStatRows][NumStatCols];     // IDW_Row%dCol%dValue
+/*0xa08*/ CLabel*           lblHeroic[NumHeroic];          // IDW_Heroic%d 9d0
+/*0xa70*/ int               rightClickMenuId;
+/*0xa74*/ int               rightClickMenuSocketId;
+/*0xa78*/ CComboWnd*        ItemCompareList;               // IDW_ItemCompareList // a40
+/*0xa80*/ bool              isComparing;                   // this and the next are a guess. Need to verify.
+/*0xa88*/ ItemPtr           pCompareItem;
+/*0xa98*/ CTAFrameDraw*     ptaPageBorderHighlight;        // FT_DefPageBorderHighlight // a60
+/*0xaa0*/ CTAFrameDraw*     ptaPageBorder;                 // FT_DefPageBorder // a68
+/*0xaa8*/ uint32_t          ItemWndIndex;
+/*0xaac*/ uint8_t                                          Unknown0xaac[0x4];
+/*0xab0*/
 };
 
 SIZE_CHECK(CItemDisplayWnd, CItemDisplayWnd_size);
@@ -4923,7 +4930,7 @@ public:
 // CKeyRingWnd
 //============================================================================
 
-constexpr size_t CKeyRingWnd_size = 0x4A8; // @sizeof(CKeyRingWnd) :: 2026-03-10 (live) @ 0x14019C388
+constexpr size_t CKeyRingWnd_size = 0x4A8; // @sizeof(CKeyRingWnd) :: 2026-05-26 (live) @ 0x14019C748
 
 class [[offsetcomments]] CKeyRingWnd : public CSidlScreenWnd, public WndEventHandler
 {
@@ -4979,7 +4986,7 @@ public:
 /*0x490*/ CPageWnd*     pPageEquipmen;                   // KRW_EquipmentItems_Page
 /*0x498*/ CTabWnd*      pTabBox;                         // KRW_Subwindows
 /*0x4a0*/ KeyRingPages  CurrentPage;
-/*0x4a4*/
+/*0x4a8*/
 };
 
 SIZE_CHECK(CKeyRingWnd, CKeyRingWnd_size);
@@ -5049,7 +5056,7 @@ public:
 
 struct loot_msg;
 
-constexpr size_t CLootWnd_size = 0xCC0; // @sizeof(CLootWnd) :: 2026-03-10 (live) @ 0x14019C529
+constexpr size_t CLootWnd_size = 0xCC0; // @sizeof(CLootWnd) :: 2026-05-26 (live) @ 0x14019C8E9
 
 class [[offsetcomments]] CLootWnd : public CSidlScreenWnd, public PopDialogHandler, public WndEventHandler
 {
@@ -5094,7 +5101,8 @@ public:
 /*0xca8*/ void*             Unknown1;
 /*0xcb0*/ void*             Unknown2;
 /*0xcb8*/ uint32_t          Unknown3;
-/*0xcbc*/
+/*0xcbc*/ uint8_t           Unknown0xcbc[0x4];
+/*0xcc0*/
 
 	ItemContainer& GetLootItems() { return LootItems; }
 	ItemPtr GetLootItem(int slot) { return LootItems.GetItem(slot); }
@@ -5266,7 +5274,7 @@ public:
 	static VirtualFunctionTable* sm_vftable;
 };
 
-constexpr size_t CMapViewWnd_size = 0x858; // @sizeof(CMapViewWnd) :: 2026-03-10 (live) @ 0x14019BD74
+constexpr size_t CMapViewWnd_size = 0x858; // @sizeof(CMapViewWnd) :: 2026-05-26 (live) @ 0x14019C134
 
 class [[offsetcomments]] CMapViewWnd : public CSidlScreenWnd, public WndEventHandler
 {
@@ -5504,6 +5512,7 @@ public:
 
 /*0x2dc*/ uint32_t           NextRefreshTime;
 /*0x2e0*/ bool               bInventoryWasActive;
+/*0x2e1*/ uint8_t            Unknown0x2e1[0x7];
 /*0x2e8*/ PageHandlerArray   PageHandlers;
 /*0x300*/ float              MerchantGreed;
 /*0x304*/ ItemGlobalIndex    ItemLocation;
@@ -5549,7 +5558,7 @@ public:
 /*0x4ac*/ int                Unknown0x338;
 /*0x4b0*/ int                Unknown0x33C;
 /*0x4b4*/ int                Guk_Currency;
-/*0x4b8*/ uint8_t            Unknown0x340[0x100];
+/*0x4b8*/ uint8_t            Unknown0x4b8[0x100];
 /*0x5b8*/
 
 	CMerchantWnd(CXWnd*);
@@ -5688,7 +5697,7 @@ public:
 
 constexpr const int MAX_PET_BUTTONS = 14;
 
-constexpr size_t CPetInfoWnd_size = 0x3D0; // @sizeof(CPetInfoWnd) :: 2026-03-10 (live) @ 0x14019B83A
+constexpr size_t CPetInfoWnd_size = 0x3D0; // @sizeof(CPetInfoWnd) :: 2026-05-26 (live) @ 0x14019BBFA
 
 class [[offsetcomments]] CPetInfoWnd : public CSidlScreenWnd, public WndEventHandler
 {
@@ -5794,6 +5803,7 @@ public:
 /*0x3ca*/ bool               SpellHold;
 /*0x3cb*/ bool               Resume;
 /*0x3cc*/ bool               ProcHold;
+/*0x3cd*/ uint8_t            Unknown0x3cd[0x3];
 /*0x3d0*/
 };
 
@@ -5827,7 +5837,7 @@ enum ECombatState
 };
 
 
-constexpr size_t CPlayerWnd_size = 0x408; // @sizeof(CPlayerWnd) :: 2026-03-10 (live) @ 0x14019C1B0
+constexpr size_t CPlayerWnd_size = 0x408; // @sizeof(CPlayerWnd) :: 2026-05-26 (live) @ 0x14019C570
 
 class [[offsetcomments]] CPlayerWnd : public CSidlScreenWnd, public WndEventHandler
 {
@@ -5843,7 +5853,6 @@ public:
 	//----------------------------------------------------------------------------
 	// data members
 
-/*0x2cc*/ 
 /*0x2d8*/ CGaugeWnd*         pPlayerHP;                         // PlayerHP
 /*0x2e0*/ CGaugeWnd*         pPetHP;                            // PetHP
 /*0x2e8*/ CGaugeWnd*         pPlayerMana;                       // PlayerMana
@@ -5917,7 +5926,7 @@ struct [[offsetcomments]] PointMerchantItem
 /*0x54*/ int           RaceMask;
 /*0x58*/ int           ClassMask;
 /*0x5c*/ bool          bCanUse;
-/*0x60*/
+/*0x5d*/
 };
 
 class PointMerchantInterface;
@@ -6045,9 +6054,8 @@ public:
 	//----------------------------------------------------------------------------
 	// data members
 
-/*0x2e4*/ uint8_t            Unknown0x244[0x154];
 /*0x438*/ COLORREF           ClassColors[0x10];
-/*0x478*/ uint8_t            Unknown0x330[0x80];
+/*0x478*/ uint8_t            Unknown0x478[0x80];
 /*0x4f8*/
 };
 
@@ -6222,7 +6230,7 @@ enum ESpellDisplayType
 	SpellDisplayType_TargetBuff,
 };
 
-constexpr size_t CSpellDisplayWnd_size = 0x3B8; // @sizeof(CSpellDisplayWnd) :: 2026-03-10 (live) @ 0x14051551E
+constexpr size_t CSpellDisplayWnd_size = 0x3B8; // @sizeof(CSpellDisplayWnd) :: 2026-05-26 (live) @ 0x140517A0E
 
 class [[offsetcomments]] CSpellDisplayWnd : public CSidlScreenWnd
 {
@@ -6247,11 +6255,13 @@ public:
 /*0x390*/ CTextureAnimation* ptaBuffIcons;              // A_SpellIcons
 /*0x398*/ CTextureAnimation* ptaDragIcons;
 /*0x3a0*/ bool               bFailed;
+/*0x3a1*/ uint8_t            Unknown0x3a1[0x3];
 /*0x3a4*/ ESpellDisplayType  SpellDisplayType;
 /*0x3a8*/ int                SpellID;
 /*0x3ac*/ int                Unknown;                   // Used in 3rd param of spell tag string %d
 /*0x3b0*/ int                LastUpdateTime;
-/*0x3b4*/
+/*0x3b4*/ uint8_t            Unknown0x3b4[0x4];
+/*0x3b8*/
 };
 
 SIZE_CHECK(CSpellDisplayWnd, CSpellDisplayWnd_size);
@@ -6324,7 +6334,7 @@ public:
 // CTargetWnd
 //============================================================================
 
-constexpr size_t CTargetWnd_size = 0x3C8; // @sizeof(CTargetWnd) :: 2026-03-10 (live) @ 0x14019C049
+constexpr size_t CTargetWnd_size = 0x3C8; // @sizeof(CTargetWnd) :: 2026-05-26 (live) @ 0x14019C409
 
 class [[offsetcomments]] CTargetWnd : public CSidlScreenWnd, public WndEventHandler
 {
@@ -6564,7 +6574,7 @@ public:
 /*0x380*/ uint32_t                       SelectedItemID;
 /*0x388*/ uint64_t                       lastUpdateTime;
 /*0x390*/ bool                           bUnknown5;
-/*0x394*/
+/*0x391*/
 };
 
 //============================================================================
@@ -6632,7 +6642,7 @@ public:
 // CTradeWnd
 //============================================================================
 
-constexpr size_t CTradeWnd_size = 0x1748; // @sizeof(CTradeWnd) :: 2026-03-10 (live) @ 0x14019C711
+constexpr size_t CTradeWnd_size = 0x1748; // @sizeof(CTradeWnd) :: 2026-05-26 (live) @ 0x14019CAD1
 
 class [[offsetcomments]] CTradeWnd : public CGFScreenWnd, public WndEventHandler
 {
@@ -6788,7 +6798,7 @@ public:
 /*0x04*/ int                transferTypeIndex;
 /*0x08*/ int64_t            requiredExpansions;       // EQExpansionOwned
 /*0x10*/ bool               disabled;
-/*0x14*/
+/*0x11*/
 };
 
 class [[offsetcomments]] ZoneGuideContinent
@@ -6833,6 +6843,7 @@ public:
 /*0x10*/ int           continentIndex;
 /*0x14*/ int           minLevel;
 /*0x18*/ int           maxLevel;
+/*0x1c*/ uint8_t       Unknown0x1c[0x4];
 /*0x20*/ DynamicBitField<unsigned short, short> types;
 /*0x30*/ ArrayClass<ZoneGuideConnection> zoneConnections;
 /*0x48*/
@@ -6899,7 +6910,7 @@ public:
 
 using ZonePathArray = ArrayClass<ZonePathData>;
 
-constexpr size_t ZoneGuideManagerClient_size = 0xFA50; // @sizeof(ZoneGuideManagerClient) :: 2026-03-10 (live) @ 0x1403581EF
+constexpr size_t ZoneGuideManagerClient_size = 0xFA50; // @sizeof(ZoneGuideManagerClient) :: 2026-05-26 (live) @ 0x140359D9F
 
 class [[offsetcomments]] ZoneGuideManagerClient : public ZoneGuideManagerBase
 {
@@ -6914,7 +6925,8 @@ public:
 /*0xfa49*/ bool              includeBindZoneInPath;
 /*0xfa4a*/ bool              autoFindActivePath;
 /*0xfa4b*/ bool              findActivePath;
-/*0xfa4c*/
+/*0xfa4c*/ uint8_t           Unknown0xfa4c[0x4];
+/*0xfa50*/
 
 	EQLIB_OBJECT static ZoneGuideManagerClient& Instance();
 };
@@ -7194,7 +7206,7 @@ public:
 protected:
 /*0x08*/ Type m_type;
 /*0x0c*/ bool m_changed = true;
-/*0x10*/
+/*0x0d*/
 };
 
 using CascadeItemArray = ArrayClass<CascadeItemBase*>;

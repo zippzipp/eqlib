@@ -182,7 +182,7 @@ private:
 	void ClearRoles();
 };
 
-constexpr size_t CGroupMember_size = 0x68; // @sizeof(CGroupMember) :: 2026-03-10 (live) @ 0x1402E6725
+constexpr size_t CGroupMember_size = 0x68; // @sizeof(CGroupMember) :: 2026-05-26 (live) @ 0x1402E7CD0
 
 class [[offsetcomments]] CGroupMember : public CGroupMemberBase
 {
@@ -190,7 +190,8 @@ public:
 /*0x50*/ CharacterZoneClient*  pCharacter;
 /*0x58*/ PlayerClient*         pPlayer;
 /*0x60*/ int                   GroupIndex;
-/*0x64*/
+/*0x64*/ uint8_t               Unknown0x64[0x4];
+/*0x68*/
 
 	CGroupMember();
 	virtual ~CGroupMember();
@@ -431,7 +432,7 @@ struct [[offsetcomments]] PointNamesEntry
 /*0x10*/ int  ImageId;
 /*0x14*/ int  MaxStackSize;
 /*0x18*/ bool bStationCashRelated;
-/*0x1c*/
+/*0x19*/
 };
 
 class [[offsetcomments]] PointSystemBase
@@ -527,7 +528,7 @@ public:
 /*0x00*/ eqtime_t StartTick;
 /*0x08*/ uint32_t ElapsedTotal;
 /*0x0c*/ bool     bCurrentState;
-/*0x10*/
+/*0x0d*/
 };
 
 class [[offsetcomments]] PCStatistics
@@ -1679,7 +1680,7 @@ public:
 	int GetDeityBitmask() const { return 1 << (GetDeityReal() - 1); }
 };
 
-constexpr size_t PcClient_size = 0x3298; // @sizeof(PcClient) :: 2026-03-10 (live) @ 0x14028CB3B
+constexpr size_t PcClient_size = 0x3298; // @sizeof(PcClient) :: 2026-05-26 (live) @ 0x14028DD2B
 
 class [[offsetcomments]] PcClient : public PcZoneClient
 {
@@ -1694,13 +1695,15 @@ public:
 /*0x2ead*/ bool                                  bOverrideAvatarProximity;
 /*0x2eb0*/ CGroup*                               Group;
 /*0x2eb8*/ bool                                  bIAmCreatingGroup;
+/*0x2eb9*/ uint8_t                               Unknown0x2eb9[0x7];
 /*0x2ec0*/ ItemArray                             ItemsPendingID;
 /*0x2ed8*/ eParcelStatus                         ParcelStatus;
 /*0x2edc*/ int                                   SubscriptionDays;
 /*0x2ee0*/ short                                 BaseKeyRingSlots[eKeyRingTypeCount];
 /*0x2eee*/ bool                                  bPickZoneFewest;
 /*0x2ef0*/ int                                   Unknown0x28a4;                // used in CContainerWnd::HandleCombine
-/*0x2ef4*/
+/*0x2ef4*/ uint8_t                               Unknown0x2ef4[0x3a4];
+/*0x3298*/
 
 	ALT_MEMBER_GETTER(ExtendedTargetList*, pExtendedTargetList, pXTargetMgr);  // cannot be null
 	ALT_MEMBER_GETTER(uint32_t, DowntimeStart, DowntimeStamp);
