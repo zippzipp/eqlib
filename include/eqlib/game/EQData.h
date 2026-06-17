@@ -217,7 +217,7 @@ public:
 /*0x48*/ bool  bAutoPitch;
 /*0x49*/ bool  bAutoHeading;
 /*0x4a*/ bool  bSkipFrame;
-/*0x4c*/
+/*0x4b*/
 };
 
 using EQCAMERABASE DEPRECATE("Use EQCamera instead of EQCAMERABASE") = EQCamera;
@@ -274,7 +274,7 @@ struct [[offsetcomments]] SpellLoadout
 /*0x38*/ char Name[MAX_LOADOUT_NAME];
 /*0x51*/ bool inuse;
 /*0x52*/ bool changed;
-/*0x54*/
+/*0x53*/
 };
 
 inline namespace deprecated {
@@ -306,7 +306,7 @@ struct [[offsetcomments]] GroupRoleLoadout
 /*0x318*/ char name[MAX_LOADOUT_NAME];
 /*0x331*/ bool inuse;
 /*0x332*/ bool changed;
-/*0x334*/
+/*0x333*/
 };
 
 struct [[offsetcomments]] TargetSetLoadout
@@ -315,7 +315,7 @@ struct [[offsetcomments]] TargetSetLoadout
 /*0x019*/ char storedString[1500];
 /*0x5f5*/ bool inuse;
 /*0x5f6*/ bool changed;
-/*0x5f8*/
+/*0x5f7*/
 };
 
 struct [[offsetcomments]] CMDLIST
@@ -354,7 +354,7 @@ struct [[offsetcomments]] HotButtonData
 /*0xb4*/ int        Slot;
 /*0xb8*/ uint8_t    Type;
 /*0xb9*/ uint8_t    ItemValid;
-/*0xbc*/
+/*0xba*/
 };
 
 struct [[offsetcomments]] EQFRIENDSLIST
@@ -485,7 +485,7 @@ public:
 /*0x3668*/ DWORD             levelTotal;                   // Average level of raid members
 /*0x366c*/ bool              Locked;
 /*0x366d*/ bool              bGroupOnInvite;
-/*0x3670*/
+/*0x366e*/
 
 	ALT_MEMBER_GETTER_ARRAY(bool, MAX_RAID_SIZE, locations, RaidMemberUsed);
 
@@ -591,7 +591,7 @@ struct [[offsetcomments]] DynamicZonePlayerInfo
 /*0x48*/ DynamicZonePlayerInfo*   pNext;
 /*0x50*/ bool                     bFlagged;                  // Do we meet the requirements?
 /*0x51*/ bool                     bCheckedZoneReqs;          // Zone reqs serverside checked?
-/*0x54*/
+/*0x52*/
 };
 
 inline namespace deprecated {
@@ -650,7 +650,7 @@ struct [[offsetcomments]] DynamicZoneCompass
 /*0x18*/ bool         bVisible;
 /*0x1c*/ int          PixelOffset;
 /*0x20*/ bool         bInWindow;
-/*0x24*/
+/*0x21*/
 };
 
 inline namespace deprecated {
@@ -892,6 +892,7 @@ class [[offsetcomments]] MercenaryClientData
 {
 public:
 /*0x00*/ bool                     hasMercenary;
+/*0x01*/ uint8_t                  Unknown0x1[0x3];
 /*0x04*/ eMercenaryState          suspendedState;
 /*0x08*/ eqtime_t                 restorationTime;
 /*0x10*/ MercenaryInfo            mercenaryInfo;
@@ -1234,6 +1235,6 @@ EQLIB_API void GetFactionName(int FactionID, char* szBuffer, size_t bufferSize);
 //constexpr uint32_t EQ_ASSIST          = 0x2529;        // 2022-03-03 (live) @ 0x140252E54
 
 // FIXME: Find a place for this
-constexpr uint32_t EQ_LoadingS__ArraySize = 0x78;      // EQ_LoadingS__SetProgressBar_x+76
+constexpr uint32_t EQ_LoadingS__ArraySize = 0x78; // @relative(EQ_LoadingS__Array_x) :: 2026-06-08 (live) @ 0x140D5AD60
 
 } // namespace eqlib

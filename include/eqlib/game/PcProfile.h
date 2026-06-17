@@ -358,6 +358,7 @@ public:
 /*0x53fc*/ BandolierSet                          Bandolier[MAX_BANDOLIER_ITEMS];
 /*0x6cfc*/ BenefitSelection                      ActiveTributeBenefits[5];
 /*0x6d24*/ BenefitSelection                      ActiveTrophyTributeBenefits[10];
+/*0x6d74*/ uint8_t                               Unknown0x6d74[0x4];
 /*0x6d78*/ ItemContainer                         GuildTributeBenefitItems;
 /*0x6da0*/ ItemContainer                         GuildTrophyTributeBenefitItems;
 /*0x6dc8*/ ItemContainer                         TradeskillDepotItems;

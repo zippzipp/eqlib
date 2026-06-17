@@ -834,12 +834,10 @@ public:
 /*0x250*/ uint8_t            FadeToAlpha;
 /*0x251*/ uint8_t            Alpha;
 /*0x254*/ CXRect             ClientRect;
-
-// @end: CXWnd Members
-
 /*0x264*/ bool               bUsesClassicUI;
 /*0x265*/ bool               bMouseOverEvent;
-/*0x268*/
+/*0x266*/
+// @end: CXWnd Members
 
 	ALT_MEMBER_ALIAS(bool, bEscapable, CloseOnESC);
 	ALT_MEMBER_ALIAS_DEPRECATED(bool, bEnableShowBorder, bBorder, "Use bEnableShowBorder instead of bBorder");
@@ -1165,9 +1163,10 @@ public:
 /*0x1b8*/ HWND*                        pGlobalHwnd;
 /*0x1c0*/ CXPoint                      StoredMousePos;               // last position Mouse was at before we moved it
 /*0x1c8*/ bool                         bManagerDeletionPending;
+/*0x1c9*/ uint8_t                      Unknown0x1c9[0x7];
 /*0x1d0*/ CursorClass                  CC;
 /*0x248*/ bool                         bUseNewUIEngine;
-/*0x24c*/
+/*0x249*/
 
 	inline bool IsShiftKey() const { return KeyboardFlags[0]; }
 	inline bool IsCtrlKey() const { return KeyboardFlags[1]; }
@@ -1178,7 +1177,7 @@ public:
 // CEQXWndManager
 //============================================================================
 
-constexpr size_t CEQXWndManager_size = 0x298; // @sizeof(CEQXWndManager) :: 2026-05-22 (live) @ 0x14019F8E5
+constexpr size_t CEQXWndManager_size = 0x298; // @sizeof(CEQXWndManager) :: 2026-06-08 (live) @ 0x1401A1BC5
 
 class [[offsetcomments]] CEQXWndManager : public CXWndManager
 {

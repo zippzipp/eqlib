@@ -297,7 +297,7 @@ public:
 /*0x20*/ float           UpDownDist;
 /*0x28*/ PlayerClient*   pSpawn;
 /*0x30*/ bool            bApplyGravity;
-/*0x34*/
+/*0x31*/
 };
 
 class PlayerPhysicsClient : public PlayerPhysics
@@ -435,6 +435,7 @@ public:
 /*0x0f4*/ char              DisplayedName[EQ_MAX_NAME];   // ie Priest of Discord
 /*0x134*/ uint8_t           PossiblyStuck;                // never seen this be 1 so maybe it was used a a point but not now...
 /*0x135*/ uint8_t           Type;
+/*0x136*/ uint8_t           Unknown0x136[0x2];
 /*0x138*/ CharacterPropertyHash Properties;
 /*0x150*/ float             AvatarHeight;                 // height of avatar from groundwhen standing
 /*0x154*/ float             Height;
@@ -736,7 +737,7 @@ struct BardQueueUnknown
 // PlayerClient
 //============================================================================
 
-constexpr size_t PlayerClient_size = 0x20D8; // @sizeof(PlayerClient) :: 2026-05-22 (live) @ 0x14030768E
+constexpr size_t PlayerClient_size = 0x20D8; // @sizeof(PlayerClient) :: 2026-06-08 (live) @ 0x1403098AE
 
 class [[offsetcomments]] PlayerClient : public PlayerZoneClient
 {

@@ -35,7 +35,7 @@ struct AltAbilityEffectData
 	int slot;
 };
 
-constexpr size_t CAltAbilityData_size = 0xE0; // @sizeof(CAltAbilityData) :: 2026-05-22 (live) @ 0x14021E11D
+constexpr size_t CAltAbilityData_size = 0xE0; // @sizeof(CAltAbilityData) :: 2026-06-08 (live) @ 0x14022051D
 
 class [[offsetcomments]] CAltAbilityData
 {
@@ -85,6 +85,7 @@ public:
 /*0xb0*/ int                 AutoGrantAssociationId;             // Usually the same as normal expansion if enabled
 /*0xb4*/ int                 Unknown0x98;
 /*0xb8*/ int                 Unknown0x9C;
+/*0xbc*/ uint8_t                                                 Unknown0xbc[0x4];
 /*0xc0*/ EQList<AltAbilityEffectData> PersistentEffects;
 /*0xe0*/
 

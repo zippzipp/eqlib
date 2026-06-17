@@ -212,7 +212,7 @@ public:
 /*0x28*/ IniFileSection*  firstSection;
 /*0x30*/ IniFileSection*  lastSection;
 /*0x38*/ bool             dirty;
-/*0x3c*/
+/*0x39*/
 };
 
 struct [[offsetcomments]] TimeCheck
@@ -775,7 +775,9 @@ public:
 /*0x250*/ uint8_t            FadeToAlpha;
 /*0x251*/ uint8_t            Alpha;
 /*0x254*/ CXRect             ClientRect;
-/*0x264*/
+/*0x264*/ bool               bUsesClassicUI;
+/*0x265*/ bool               bMouseOverEvent;
+/*0x266*/
 // @end: CXWnd Members
 };
 
