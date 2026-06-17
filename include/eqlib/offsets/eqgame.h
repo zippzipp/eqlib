@@ -19,7 +19,7 @@
 //
 
 #define __ClientDate                                               20260608u
-#define __ExpectedVersionDate                                     "Jun 8 2026"
+#define __ExpectedVersionDate                                     "Jun  8 2026"
 #define __ExpectedVersionTime                                     "16:04:47"
 #define __ActualVersionDate_x                                      0x14098E338
 #define __ActualVersionTime_x                                      0x14098E328
