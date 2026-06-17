@@ -297,7 +297,7 @@ public:
 /*0x20*/ float           UpDownDist;
 /*0x28*/ PlayerClient*   pSpawn;
 /*0x30*/ bool            bApplyGravity;
-/*0x34*/
+/*0x31*/
 };
 
 class PlayerPhysicsClient : public PlayerPhysics
@@ -462,7 +462,7 @@ public:
 /*0x1b0*/ int               SplineRiderID;
 /*0x1b8*/ uint64_t          LockID;
 /*0x1c0*/ uint32_t          EncounterLockState;
-/*0x1c4*/
+/*0x1c8*/
 
 	EQLIB_OBJECT unsigned int GetId() const { return SpawnID; }
 
@@ -736,7 +736,7 @@ struct BardQueueUnknown
 // PlayerClient
 //============================================================================
 
-constexpr size_t PlayerClient_size = 0x20D8; // @sizeof(PlayerClient) :: 2026-05-22 (live) @ 0x14030768E
+constexpr size_t PlayerClient_size = 0x20D8; // @sizeof(PlayerClient) :: 2026-06-11 (live) @ 0x14030989E
 
 class [[offsetcomments]] PlayerClient : public PlayerZoneClient
 {

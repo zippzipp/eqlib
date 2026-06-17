@@ -132,7 +132,7 @@ public:
 /*0x0000*/ KeyCombo     NormalKey[nEQMappableCommands];
 /*0x08a4*/ KeyCombo     AltKey[nEQMappableCommands];
 /*0x1148*/ char         CommandState[nEQMappableCommands];
-/*0x1374*/
+/*0x1371*/
 };
 
 } // namespace eqlib

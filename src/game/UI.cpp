@@ -67,8 +67,7 @@ EQ_Spell* PlayerBuffInfoWrapper::GetSpell() const
 // CRadioGroup
 //============================================================================
 
-CRadioGroup::CRadioGroup(CXStr name)
-	: Name(name)
+CRadioGroup::CRadioGroup()
 {
 }
 

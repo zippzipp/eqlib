@@ -105,7 +105,7 @@ inline namespace deprecated
 	/*0x00*/ ITEMBASEARRAY* pItems;
 	/*0x08*/ size_t         Size;
 	/*0x10*/ unsigned int   Capacity;
-	/*0x14*/
+/*0x14*/
 	};
 }
 
@@ -582,7 +582,7 @@ protected:
 /*0x20*/ uint8_t                 m_atDepth = 0;
 /*0x22*/ short                   m_slots[ItemIndex::MAX_INVENTORY_DEPTH - 1];
 /*0x26*/ bool                    m_bDynamic;
-/*0x28*/
+/*0x27*/
 
 public:
 	ALT_MEMBER_GETTER(uint32_t, m_size, Size);
@@ -715,7 +715,7 @@ inline namespace deprecated
 		/*0x1c*/ int   ProcRate;                         // chance to proc
 		/*0x20*/ char  OtherName[0x40];                  // some kind of override
 		/*0x60*/ int   OtherID;                          // Description ID
-		/*0x64*/
+/*0x64*/
 
 			// Currently necessary because of MQ2DataTypes
 		ITEMSPELLS() { ZeroMemory(this, sizeof(ITEMSPELLS)); }
@@ -803,7 +803,7 @@ public:
 	}
 };
 
-constexpr size_t ItemDefinition_size = 0x688; // @sizeof(ItemDefinition) :: 2026-05-22 (live) @ 0x1402239D4
+constexpr size_t ItemDefinition_size = 0x688; // @sizeof(ItemDefinition) :: 2026-06-11 (live) @ 0x140225DC4
 
 class [[offsetcomments]] ItemDefinition
 {
@@ -1255,7 +1255,7 @@ public:
 	__declspec(property(get = get_Item2)) ItemDefinition* Item2;
 };
 
-constexpr size_t ItemClient_size = 0x120; // @sizeof(ItemClient) :: 2026-05-22 (live) @ 0x1401EBB69
+constexpr size_t ItemClient_size = 0x120; // @sizeof(ItemClient) :: 2026-06-11 (live) @ 0x1401EDF59
 
 class [[offsetcomments]] ItemClient : public ItemBase
 {
