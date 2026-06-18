@@ -336,7 +336,7 @@ struct PetObjectData;
 
 constexpr int MAX_LINKED_SPELL_TIMERS = 25;
 
-constexpr size_t PcProfile_size = 0x6EA8; // @sizeof(PcProfile) :: 2026-05-22 (live) @ 0x14067A814
+constexpr size_t PcProfile_size = 0x6EA8; // @sizeof(PcProfile) :: 2026-06-11 (live) @ 0x14067CC04
 
 class [[offsetcomments]] PcProfile : public BaseProfile
 {
@@ -358,6 +358,7 @@ public:
 /*0x53fc*/ BandolierSet                          Bandolier[MAX_BANDOLIER_ITEMS];
 /*0x6cfc*/ BenefitSelection                      ActiveTributeBenefits[5];
 /*0x6d24*/ BenefitSelection                      ActiveTrophyTributeBenefits[10];
+/*0x6d74*/ uint8_t                               Unknown0x6d74[0x4];
 /*0x6d78*/ ItemContainer                         GuildTributeBenefitItems;
 /*0x6da0*/ ItemContainer                         GuildTrophyTributeBenefitItems;
 /*0x6dc8*/ ItemContainer                         TradeskillDepotItems;

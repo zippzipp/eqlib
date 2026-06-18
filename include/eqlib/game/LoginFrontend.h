@@ -264,7 +264,7 @@ namespace eqmain {
 // CXWnd
 //============================================================================
 
-constexpr size_t CXWnd_size = 0x268; // @sizeof(CXWnd, eqmain) :: 2026-05-22 (live) @ 0x1800DC88B
+constexpr size_t CXWnd_size = 0x268; // @sizeof(CXWnd) :: 2026-06-11 (live) @ 0x1405DA226
 constexpr size_t CXWnd_vftable_size = 0x2D0;
 
 class [[offsetcomments]] CXWnd
@@ -775,7 +775,9 @@ public:
 /*0x250*/ uint8_t            FadeToAlpha;
 /*0x251*/ uint8_t            Alpha;
 /*0x254*/ CXRect             ClientRect;
-/*0x264*/
+/*0x264*/ bool               bUsesClassicUI;
+/*0x265*/ bool               bMouseOverEvent;
+/*0x268*/
 // @end: CXWnd Members
 };
 

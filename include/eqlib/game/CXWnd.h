@@ -251,7 +251,7 @@ public:
 // CXWnd
 //============================================================================
 
-constexpr size_t CXWnd_size = 0x268; // @sizeof(CXWnd) :: 2026-05-22 (live) @ 0x1405D8506
+constexpr size_t CXWnd_size = 0x268; // @sizeof(CXWnd) :: 2026-06-11 (live) @ 0x1405DA226
 constexpr size_t CXWnd_vftable_size = 0x348;
 
 class [[offsetcomments]] CXWnd
@@ -834,12 +834,10 @@ public:
 /*0x250*/ uint8_t            FadeToAlpha;
 /*0x251*/ uint8_t            Alpha;
 /*0x254*/ CXRect             ClientRect;
-
-// @end: CXWnd Members
-
 /*0x264*/ bool               bUsesClassicUI;
 /*0x265*/ bool               bMouseOverEvent;
 /*0x268*/
+// @end: CXWnd Members
 
 	ALT_MEMBER_ALIAS(bool, bEscapable, CloseOnESC);
 	ALT_MEMBER_ALIAS_DEPRECATED(bool, bEnableShowBorder, bBorder, "Use bEnableShowBorder instead of bBorder");
@@ -873,7 +871,7 @@ enum eIniFlags
 	eIniFlag_All                     = 0xffffffff
 };
 
-constexpr size_t CSidlScreenWnd_size = 0x2D0; // @sizeof(CSidlScreenWnd) :: 2026-05-22 (live) @ 0x1405F7E81
+constexpr size_t CSidlScreenWnd_size = 0x2D0; // @sizeof(CSidlScreenWnd) :: 2026-06-11 (live) @ 0x1405F9AF1
 constexpr size_t CSidlScreenWnd_vftable_size = 0x380;
 
 class [[offsetcomments]] CSidlScreenWnd : public CXWnd
@@ -1165,6 +1163,7 @@ public:
 /*0x1b8*/ HWND*                        pGlobalHwnd;
 /*0x1c0*/ CXPoint                      StoredMousePos;               // last position Mouse was at before we moved it
 /*0x1c8*/ bool                         bManagerDeletionPending;
+/*0x1c9*/ uint8_t                      Unknown0x1c9[0x7];
 /*0x1d0*/ CursorClass                  CC;
 /*0x248*/ bool                         bUseNewUIEngine;
 /*0x24c*/
@@ -1178,7 +1177,7 @@ public:
 // CEQXWndManager
 //============================================================================
 
-constexpr size_t CEQXWndManager_size = 0x298; // @sizeof(CEQXWndManager) :: 2026-05-22 (live) @ 0x14019F8E5
+constexpr size_t CEQXWndManager_size = 0x298; // @sizeof(CEQXWndManager) :: 2026-06-11 (live) @ 0x1401A1BB5
 
 class [[offsetcomments]] CEQXWndManager : public CXWndManager
 {

@@ -850,6 +850,7 @@ class [[offsetcomments]] MercenaryClientData
 {
 public:
 /*0x00*/ bool                     hasMercenary;
+/*0x01*/ uint8_t                  Unknown0x1[0x3];
 /*0x04*/ eMercenaryState          suspendedState;
 /*0x08*/ eqtime_t                 restorationTime;
 /*0x10*/ MercenaryInfo            mercenaryInfo;
@@ -1192,6 +1193,6 @@ EQLIB_API void GetFactionName(int FactionID, char* szBuffer, size_t bufferSize);
 //constexpr uint32_t EQ_ASSIST          = 0x2529;        // 2022-03-03 (live) @ 0x140252E54
 
 // FIXME: Find a place for this
-constexpr uint32_t EQ_LoadingS__ArraySize = 0x78;      // EQ_LoadingS__SetProgressBar_x+76
+constexpr uint32_t EQ_LoadingS__ArraySize = 0x78; // @relative(EQ_LoadingS__Array_x) :: 2026-06-11 (live) @ 0x140D5AD60
 
 } // namespace eqlib

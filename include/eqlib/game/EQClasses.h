@@ -725,7 +725,7 @@ public:
 /*0x1d8*/
 };
 
-constexpr size_t EQWorldData_size = 0x1F88; // @sizeof(EQWorldData) :: 2026-05-22 (live) @ 0x14026E3B6
+constexpr size_t EQWorldData_size = 0x1F88; // @sizeof(EQWorldData) :: 2026-06-11 (live) @ 0x140270766
 
 class [[offsetcomments]] EQWorldData
 {
@@ -980,7 +980,8 @@ public:
 	void Release();
 
 /*0x08*/ int refCount = 1;
-/*0x0c*/
+/*0x0c*/ uint8_t Unknown0xc[0x4];
+/*0x10*/
 };
 
 class [[offsetcomments]] SoundAsset : public SoundObject
@@ -1229,7 +1230,7 @@ using SKILL = EQ_Skill;
 using PSKILL = EQ_Skill*;
 
 
-constexpr size_t SkillManager_size = 0x399C80; // @sizeof(SkillManager) :: 2026-05-22 (live) @ 0x14026E4F6
+constexpr size_t SkillManager_size = 0x399C80; // @sizeof(SkillManager) :: 2026-06-11 (live) @ 0x1402708A6
 
 class [[offsetcomments]] SkillManager
 {

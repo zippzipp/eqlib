@@ -182,7 +182,7 @@ private:
 	void ClearRoles();
 };
 
-constexpr size_t CGroupMember_size = 0x68; // @sizeof(CGroupMember) :: 2026-05-22 (live) @ 0x1402E7CD0
+constexpr size_t CGroupMember_size = 0x68; // @sizeof(CGroupMember) :: 2026-06-11 (live) @ 0x1402E9EE0
 
 class [[offsetcomments]] CGroupMember : public CGroupMemberBase
 {
@@ -1680,7 +1680,7 @@ public:
 	int GetDeityBitmask() const { return 1 << (GetDeityReal() - 1); }
 };
 
-constexpr size_t PcClient_size = 0x3298; // @sizeof(PcClient) :: 2026-05-22 (live) @ 0x14028DD2B
+constexpr size_t PcClient_size = 0x3298; // @sizeof(PcClient) :: 2026-06-11 (live) @ 0x14028FF2B
 
 class [[offsetcomments]] PcClient : public PcZoneClient
 {
@@ -1695,6 +1695,7 @@ public:
 /*0x2ead*/ bool                                  bOverrideAvatarProximity;
 /*0x2eb0*/ CGroup*                               Group;
 /*0x2eb8*/ bool                                  bIAmCreatingGroup;
+/*0x2eb9*/ uint8_t                               Unknown0x2eb9[0x7];
 /*0x2ec0*/ ItemArray                             ItemsPendingID;
 /*0x2ed8*/ eParcelStatus                         ParcelStatus;
 /*0x2edc*/ int                                   SubscriptionDays;

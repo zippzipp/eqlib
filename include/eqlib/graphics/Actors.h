@@ -402,7 +402,7 @@ public:
 	/*0x18*/ CActorInterface* pActor1;
 	/*0x20*/ CActorInterface* pActor2;
 	/*0x28*/ CObjectGroupStage* pStage;
-	/*0x30*/
+/*0x30*/
 };
 
 class [[offsetcomments]] ActorClient : public ActorBase

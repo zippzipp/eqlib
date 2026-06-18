@@ -50,7 +50,7 @@ enum EPlace
 	CanPlaceAndGoto,
 };
 
-constexpr size_t zoneHeader_size = 0x2A4; // @sizeof(zoneHeader) :: 2026-05-22 (live) @ 0x140EB27B4
+constexpr size_t zoneHeader_size = 0x2A4; // @sizeof(zoneHeader) :: 2026-06-11 (live) @ 0x140EB47D4
 
 struct [[offsetcomments]] zoneHeader
 {
@@ -190,6 +190,7 @@ public:
 	EQLIB_OBJECT int CastSpell(const CVector3& pos);
 
 /*0x00*/ int             slot;           // the gem the spell below is memmed in... 0-11
+/*0x04*/ uint8_t         Unknown0x4[0x4];
 /*0x08*/ PSPELL          spell;
 /*0x10*/ ItemGlobalIndex itemLocation;
 /*0x1c*/ ItemSpellTypes  itemSpellType;
@@ -214,8 +215,7 @@ struct [[offsetcomments]] EQSuccessfulHit
 /*0x11*/ float         HitHeading;
 /*0x15*/ float         HitPitch;
 /*0x19*/ bool          bSecondary;
-/*0x1a*/ uint8_t       Unknown0x1A[6];
-/*0x20*/
+/*0x1c*/
 };
 #pragma pack(pop)
 using pEQSuccessfulHit DEPRECATE("Use EQSuccessfulHit* instead of pEQSuccessfulHit") = EQSuccessfulHit*;
@@ -314,7 +314,7 @@ struct [[offsetcomments]] EQGameOptions
 
 
 // size of EverQuestinfo is the distance from this byte to the end of the struct
-constexpr size_t EverQuestinfo_size = 0x75278; // @sizeof(EverQuestinfo) :: 2026-05-22 (live) @ 0x140EB25C0
+constexpr size_t EverQuestinfo_size = 0x75278; // @sizeof(EverQuestinfo) :: 2026-06-11 (live) @ 0x140EB45E0
 
 struct [[offsetcomments]] EverQuestinfo
 {
@@ -716,7 +716,7 @@ public:
 };
 
 
-constexpr size_t CEverQuest_size = 0x19710; // @sizeof(CEverQuest) :: 2026-05-22 (live) @ 0x140351963
+constexpr size_t CEverQuest_size = 0x19710; // @sizeof(CEverQuest) :: 2026-06-11 (live) @ 0x140353BE3
 
 class [[offsetcomments]] CEverQuest : public CEverQuestBase, public UniversalChatProxyHandler, public PopDialogHandler
 {
