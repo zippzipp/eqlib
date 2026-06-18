@@ -205,7 +205,7 @@ public:
 /*0x0fc*/ float                    unknownFloat1;
 /*0x100*/ float                    unknownFloat2;
 /*0x104*/ bool                     unknownBool1;
-/*0x105*/
+/*0x108*/
 	ALT_MEMBER_GETTER_DEPRECATED(CActorInterface*, pActor, pSwitch, "Use pActor instead of pSwitch");
 };
 

@@ -44,7 +44,7 @@ struct [[offsetcomments]] MonsterMissionTemplate
 /*0x0c*/ int  NumSelected;
 /*0x10*/ bool CanSelect;
 /*0x11*/ char TemplateName[0x40];
-/*0x51*/
+/*0x54*/
 };
 
 struct [[offsetcomments]] PCSharedTaskData

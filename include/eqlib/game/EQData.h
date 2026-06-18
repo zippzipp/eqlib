@@ -175,7 +175,7 @@ public:
 /*0x48*/ bool  bAutoPitch;
 /*0x49*/ bool  bAutoHeading;
 /*0x4a*/ bool  bSkipFrame;
-/*0x4b*/
+/*0x4c*/
 };
 
 using EQCAMERABASE DEPRECATE("Use EQCamera instead of EQCAMERABASE") = EQCamera;
@@ -232,7 +232,7 @@ struct [[offsetcomments]] SpellLoadout
 /*0x38*/ char Name[MAX_LOADOUT_NAME];
 /*0x51*/ bool inuse;
 /*0x52*/ bool changed;
-/*0x53*/
+/*0x54*/
 };
 
 inline namespace deprecated {
@@ -264,7 +264,7 @@ struct [[offsetcomments]] GroupRoleLoadout
 /*0x318*/ char name[MAX_LOADOUT_NAME];
 /*0x331*/ bool inuse;
 /*0x332*/ bool changed;
-/*0x333*/
+/*0x334*/
 };
 
 struct [[offsetcomments]] TargetSetLoadout
@@ -273,7 +273,7 @@ struct [[offsetcomments]] TargetSetLoadout
 /*0x019*/ char storedString[1500];
 /*0x5f5*/ bool inuse;
 /*0x5f6*/ bool changed;
-/*0x5f7*/
+/*0x5f8*/
 };
 
 struct [[offsetcomments]] CMDLIST
@@ -312,7 +312,7 @@ struct [[offsetcomments]] HotButtonData
 /*0xb4*/ int        Slot;
 /*0xb8*/ uint8_t    Type;
 /*0xb9*/ uint8_t    ItemValid;
-/*0xba*/
+/*0xbc*/
 };
 
 struct [[offsetcomments]] EQFRIENDSLIST
@@ -443,7 +443,7 @@ public:
 /*0x3668*/ DWORD             levelTotal;                   // Average level of raid members
 /*0x366c*/ bool              Locked;
 /*0x366d*/ bool              bGroupOnInvite;
-/*0x366e*/
+/*0x3670*/
 
 	ALT_MEMBER_GETTER_ARRAY(bool, MAX_RAID_SIZE, locations, RaidMemberUsed);
 
@@ -549,7 +549,7 @@ struct [[offsetcomments]] DynamicZonePlayerInfo
 /*0x48*/ DynamicZonePlayerInfo*   pNext;
 /*0x50*/ bool                     bFlagged;                  // Do we meet the requirements?
 /*0x51*/ bool                     bCheckedZoneReqs;          // Zone reqs serverside checked?
-/*0x52*/
+/*0x54*/
 };
 
 inline namespace deprecated {
@@ -608,7 +608,7 @@ struct [[offsetcomments]] DynamicZoneCompass
 /*0x18*/ bool         bVisible;
 /*0x1c*/ int          PixelOffset;
 /*0x20*/ bool         bInWindow;
-/*0x21*/
+/*0x24*/
 };
 
 inline namespace deprecated {

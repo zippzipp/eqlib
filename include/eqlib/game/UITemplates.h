@@ -251,7 +251,7 @@ public:
 	EQLIB_OBJECT CStaticScreenPieceTemplate(CParamStaticScreenPiece*);
 
 /*0xa0*/ bool                     bAutoDraw = true;
-/*0xa1*/
+/*0xa4*/
 };
 
 //============================================================================
@@ -273,7 +273,7 @@ public:
 /*0x10*/ CXStr                    strName;
 /*0x18*/ bool                     bResizeHorizontal = false;
 /*0x19*/ bool                     bResizeVertical = false;
-/*0x1a*/
+/*0x1c*/
 };
 
 //============================================================================

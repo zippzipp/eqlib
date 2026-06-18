@@ -212,7 +212,7 @@ public:
 /*0x28*/ IniFileSection*  firstSection;
 /*0x30*/ IniFileSection*  lastSection;
 /*0x38*/ bool             dirty;
-/*0x39*/
+/*0x3c*/
 };
 
 struct [[offsetcomments]] TimeCheck

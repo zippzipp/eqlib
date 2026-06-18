@@ -1166,7 +1166,7 @@ public:
 /*0x1c9*/ uint8_t                      Unknown0x1c9[0x7];
 /*0x1d0*/ CursorClass                  CC;
 /*0x248*/ bool                         bUseNewUIEngine;
-/*0x249*/
+/*0x24c*/
 
 	inline bool IsShiftKey() const { return KeyboardFlags[0]; }
 	inline bool IsCtrlKey() const { return KeyboardFlags[1]; }

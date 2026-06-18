@@ -304,7 +304,7 @@ public:
 /*0x24*/ bool                     bAllowMultiSelect = false;
 /*0x28*/ int                      nSelectionLimit = -1;
 /*0x2c*/ bool                     bAllowNullable = false;
-/*0x2d*/
+/*0x30*/
 };
 
 //============================================================================
@@ -828,7 +828,7 @@ public:
 /*0x280*/ CXStr        Text;
 /*0x288*/ CXStr        AppendText;
 /*0x290*/ bool         bTextDirty;
-/*0x298*/
+/*0x294*/
 };
 
 //============================================================================
@@ -863,7 +863,7 @@ struct [[offsetcomments]] STreeData
 {
 /*0x00*/ int                      Depth = 0;
 /*0x04*/ bool                     bIsExpandable = false;
-/*0x05*/
+/*0x08*/
 };
 
 struct [[offsetcomments]] SListWndCell
@@ -927,7 +927,7 @@ struct [[offsetcomments]] SListWndColumn
 /*0x40*/ CTextureAnimation*       pMouseOver = nullptr;
 /*0x48*/ CXStr                    Tooltip;
 /*0x50*/ bool                     bResizable = false;
-/*0x51*/
+/*0x54*/
 
 	SListWndColumn(CXStr strLabel = "",
 		int width = 0,
@@ -1203,7 +1203,7 @@ public:
 /*0x308*/ COLORREF           CRHighlightFlashColor;
 /*0x30c*/ bool               bHighlightOnNewMessages;
 /*0x30d*/ bool               bFlashing;
-/*0x30e*/
+/*0x310*/
 };
 
 //============================================================================
@@ -1550,7 +1550,7 @@ public:
 /*0x31d*/ bool                       dividerMoving;
 /*0x320*/ int                        oldPosCoord;              // X for horizontal, Y for vertical
 /*0x324*/ bool                       bStyle_Dividers;          // the Style_Dividers property from XML
-/*0x325*/
+/*0x328*/
 };
 
 class [[offsetcomments]] CVerticalLayoutWnd : public CLayoutWnd
@@ -1563,7 +1563,7 @@ public:
 /*0x31d*/ bool                       dividerMoving;
 /*0x320*/ int                        oldPosCoord;              // X for horizontal, Y for vertical
 /*0x324*/ bool                       bStyle_Dividers;          // the Style_Dividers property from XML
-/*0x325*/
+/*0x328*/
 };
 
 class [[offsetcomments]] CTileLayoutWnd : public CLayoutWnd
@@ -1854,7 +1854,7 @@ public:
 /*0x41c*/ int                       CLLActionMenuQty;
 /*0x420*/ int                       PLLActionMenu;
 /*0x424*/ bool                      bUnknown3;
-/*0x425*/
+/*0x428*/
 };
 
 //============================================================================
@@ -2215,7 +2215,7 @@ struct [[offsetcomments]] BazaarSearchResults
 /*0xa0*/ int        statNum = 0;
 /*0xa4*/ float      statNumFloat = 0.f;
 /*0xa8*/ EqItemGuid itemGuid;
-/*0xba*/
+/*0xbc*/
 };
 
 // CBazaarSearchWnd_size: 0x9720
@@ -3151,7 +3151,7 @@ public:
 /*0x1a0*/ int                WorldContainerRealEstateItemID;
 /*0x1a4*/ DWORD              Timer;
 /*0x1a8*/ bool               bShowDone;
-/*0x1b0*/
+/*0x1ac*/
 
 	ItemClient* getter_pWorldContainer() { return WorldContainer.get(); }
 	__declspec(property(get = getter_pWorldContainer)) ItemClient* pWorldContainer;
@@ -4303,7 +4303,7 @@ public:
 /*0x143c*/ bool                  bTrophyTributeCostOutofSync;
 /*0x143d*/ bool                  bTrophyTributeActive;
 /*0x143e*/ bool                  bTrophyBenefitsLocked;
-/*0x143f*/
+/*0x1440*/
 
 	EQLIB_OBJECT bool ValidGuildName(int);
 	EQLIB_OBJECT char* GetGuildMotd();
@@ -4494,7 +4494,7 @@ public:
 /*0x458*/ int             HotWindowIndex;
 /*0x45c*/ int             ConfirmId;
 /*0x460*/ bool            KeepCurrentSize;
-/*0x461*/
+/*0x464*/
 };
 
 //============================================================================
@@ -4539,9 +4539,9 @@ public:
 	EQLIB_OBJECT void Init();
 	EQLIB_OBJECT void UpdateMoneyDisplay();
 
-/*0x1188*/ int64_t     VitalityCap;
-/*0x1190*/ int         AAVitalityCap;
-/*0x1194*/
+/*0x3d0*/ int64_t     VitalityCap;
+/*0x3d8*/ int         AAVitalityCap;
+/*0x3dc*/
 };
 
 inline namespace deprecated {
@@ -4592,7 +4592,7 @@ public:
 /*0x1d*/ bool               bUsable;
 /*0x1e*/ bool               bLocked;
 /*0x20*/ uint32_t           LastUpdate;
-/*0x28*/
+/*0x24*/
 };
 
 SIZE_CHECK(CInvSlot, CInvSlot_size);
@@ -4847,7 +4847,7 @@ public:
 /*0xa98*/ CTAFrameDraw*     ptaPageBorderHighlight;        // FT_DefPageBorderHighlight // a60
 /*0xaa0*/ CTAFrameDraw*     ptaPageBorder;                 // FT_DefPageBorder // a68
 /*0xaa8*/ uint32_t          ItemWndIndex;
-/*0xab0*/
+/*0xaac*/
 };
 
 SIZE_CHECK(CItemDisplayWnd, CItemDisplayWnd_size);
@@ -4983,7 +4983,7 @@ public:
 /*0x490*/ CPageWnd*     pPageEquipmen;                   // KRW_EquipmentItems_Page
 /*0x498*/ CTabWnd*      pTabBox;                         // KRW_Subwindows
 /*0x4a0*/ KeyRingPages  CurrentPage;
-/*0x4a8*/
+/*0x4a4*/
 };
 
 SIZE_CHECK(CKeyRingWnd, CKeyRingWnd_size);
@@ -5098,7 +5098,7 @@ public:
 /*0xca8*/ void*             Unknown1;
 /*0xcb0*/ void*             Unknown2;
 /*0xcb8*/ uint32_t          Unknown3;
-/*0xcc0*/
+/*0xcbc*/
 
 	ItemContainer& GetLootItems() { return LootItems; }
 	ItemPtr GetLootItem(int slot) { return LootItems.GetItem(slot); }
@@ -5920,7 +5920,7 @@ struct [[offsetcomments]] PointMerchantItem
 /*0x54*/ int           RaceMask;
 /*0x58*/ int           ClassMask;
 /*0x5c*/ bool          bCanUse;
-/*0x5d*/
+/*0x60*/
 };
 
 class PointMerchantInterface;
@@ -6048,8 +6048,8 @@ public:
 	//----------------------------------------------------------------------------
 	// data members
 
-/*0x438*/ COLORREF           ClassColors[0x10];
-/*0x478*/
+/*0x2e4*/ COLORREF           ClassColors[0x10];
+/*0x324*/
 };
 
 inline namespace deprecated {
@@ -6253,7 +6253,7 @@ public:
 /*0x3a8*/ int                SpellID;
 /*0x3ac*/ int                CastAsLevel;               // Used in 3rd param of spell tag string %d
 /*0x3b0*/ int                LastUpdateTime;
-/*0x3b8*/
+/*0x3b4*/
 };
 
 SIZE_CHECK(CSpellDisplayWnd, CSpellDisplayWnd_size);
@@ -6566,7 +6566,7 @@ public:
 /*0x380*/ uint32_t                       SelectedItemID;
 /*0x388*/ uint64_t                       lastUpdateTime;
 /*0x390*/ bool                           bUnknown5;
-/*0x391*/
+/*0x394*/
 };
 
 //============================================================================
@@ -6790,7 +6790,7 @@ public:
 /*0x04*/ int                transferTypeIndex;
 /*0x08*/ int64_t            requiredExpansions;       // EQExpansionOwned
 /*0x10*/ bool               disabled;
-/*0x11*/
+/*0x14*/
 };
 
 class [[offsetcomments]] ZoneGuideContinent
@@ -7197,7 +7197,7 @@ public:
 protected:
 /*0x08*/ Type m_type;
 /*0x0c*/ bool m_changed = true;
-/*0x0d*/
+/*0x10*/
 };
 
 using CascadeItemArray = ArrayClass<CascadeItemBase*>;

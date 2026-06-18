@@ -196,7 +196,7 @@ public:
 /*0x1c*/ ItemSpellTypes  itemSpellType;
 /*0x20*/ float           rangeSquared;
 /*0x24*/ bool            cursorVisible;
-/*0x25*/
+/*0x28*/
 };
 
 using CTargetRing DEPRECATE("Use FreeTargetTracker instead of CTargetRing") = CTargetRing;
@@ -215,7 +215,7 @@ struct [[offsetcomments]] EQSuccessfulHit
 /*0x11*/ float         HitHeading;
 /*0x15*/ float         HitPitch;
 /*0x19*/ bool          bSecondary;
-/*0x1a*/
+/*0x1c*/
 };
 #pragma pack(pop)
 using pEQSuccessfulHit DEPRECATE("Use EQSuccessfulHit* instead of pEQSuccessfulHit") = EQSuccessfulHit*;
@@ -251,7 +251,7 @@ struct [[offsetcomments]] EQCameraOptions
 /*0x10*/ float             pitch;
 /*0x14*/ float             zoom;
 /*0x18*/ bool              changeable;
-/*0x19*/
+/*0x1c*/
 };
 
 struct [[offsetcomments]] EQGameOptions

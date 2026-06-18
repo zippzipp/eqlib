@@ -726,7 +726,7 @@ public:
 /*0x00*/ CXStr          itemString;
 /*0x08*/ bool           declared = false;
 /*0x09*/ bool           valid = false;
-/*0x0a*/
+/*0x0c*/
 };
 using CXMLSymbolItemArray = ArrayClass2<CXMLSymbolItem>;
 
@@ -739,7 +739,7 @@ public:
 /*0x08*/ CXMLSymbolItemArray items;
 /*0x28*/ CHashCXStrInt32     itemsHashes;
 /*0x48*/ bool                valid = false;
-/*0x49*/
+/*0x4c*/
 };
 using CXMLSymbolClassArray = ArrayClass2<CXMLSymbolClass>;
 

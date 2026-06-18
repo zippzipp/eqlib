@@ -190,7 +190,7 @@ public:
 /*0x50*/ CharacterZoneClient*  pCharacter;
 /*0x58*/ PlayerClient*         pPlayer;
 /*0x60*/ int                   GroupIndex;
-/*0x68*/
+/*0x64*/
 
 	CGroupMember();
 	virtual ~CGroupMember();
@@ -431,7 +431,7 @@ struct [[offsetcomments]] PointNamesEntry
 /*0x10*/ int  ImageId;
 /*0x14*/ int  MaxStackSize;
 /*0x18*/ bool bStationCashRelated;
-/*0x19*/
+/*0x1c*/
 };
 
 class [[offsetcomments]] PointSystemBase
@@ -527,7 +527,7 @@ public:
 /*0x00*/ eqtime_t StartTick;
 /*0x08*/ uint32_t ElapsedTotal;
 /*0x0c*/ bool     bCurrentState;
-/*0x0d*/
+/*0x10*/
 };
 
 class [[offsetcomments]] PCStatistics

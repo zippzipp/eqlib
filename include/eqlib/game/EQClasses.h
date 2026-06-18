@@ -278,7 +278,7 @@ struct [[offsetcomments]] LabelCache
 /*0xbc8*/ int   MercenarySpellDamage;
 /*0xbcc*/ char  PowerSourcePercent[8];
 /*0xbd4*/ bool  HasMercenary;
-/*0xbd5*/
+/*0xbd8*/
 };
 
 //============================================================================
@@ -1026,7 +1026,7 @@ struct [[offsetcomments]] SoundControl
 /*0x28*/ int poolNumber = 0;
 /*0x2c*/ bool fireOnce = true;
 /*0x2d*/ bool startUp = false;
-/*0x2e*/
+/*0x30*/
 };
 
 class SoundEmitter
@@ -1224,7 +1224,7 @@ public:
 /*0x024*/ DWORD             MinLevel[MAX_CLASSES + 1];      // the level each class gains this skill
 /*0x0b4*/ DWORD             Available[MAX_CLASSES + 1];     // FF=not available for that class (its actually how difficult it is to learn... low num easy, high hard...)
 /*0x144*/ bool              bSkillupable;
-/*0x145*/
+/*0x148*/
 };
 using SKILL = EQ_Skill;
 using PSKILL = EQ_Skill*;
@@ -1336,7 +1336,7 @@ struct [[offsetcomments]] STargetData
 /*0x00*/ PlayerClient* player;
 /*0x08*/ float         distanceSquared;
 /*0x0c*/ bool          visited;
-/*0x0d*/
+/*0x10*/
 };
 
 // CTargetManager
@@ -1366,7 +1366,7 @@ public:
 /*0x208*/ float        freeTargetingRangeSquared;
 /*0x20c*/ CVector3     lastFreeTargetingPosition;
 /*0x218*/ bool         lastFreeTargetingInRange;         // 0=red 1=green
-/*0x219*/
+/*0x21c*/
 };
 
 using TARGETMANAGER DEPRECATE("Use CTargetManager instead of TARGETMANAGER") = CTargetManager;
@@ -1387,7 +1387,7 @@ public:
 
 /*0x08*/ int m_refCount;
 /*0x0c*/ bool m_noRef;
-/*0x0d*/
+/*0x10*/
 };
 
 struct UdpPlatformGuardData;

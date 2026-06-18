@@ -177,7 +177,7 @@ struct [[offsetcomments]] SModeInfo
 /*0x02*/ bool bDepth24;
 /*0x03*/ bool bDepth32;
 /*0x04*/ bool bWindowed;
-/*0x05*/
+/*0x08*/
 };
 
 //----------------------------------------------------------------------------
@@ -205,7 +205,7 @@ struct [[offsetcomments]] SDevice
 /*0xd4*/ SModeInfo           mode32;
 /*0xd9*/ SModeInfo           mode16A;
 /*0xde*/ SModeInfo           mode16B;
-/*0xe3*/
+/*0xe4*/
 };
 
 //----------------------------------------------------------------------------

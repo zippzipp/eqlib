@@ -582,7 +582,7 @@ protected:
 /*0x20*/ uint8_t                 m_atDepth = 0;
 /*0x22*/ short                   m_slots[ItemIndex::MAX_INVENTORY_DEPTH - 1];
 /*0x26*/ bool                    m_bDynamic;
-/*0x27*/
+/*0x28*/
 
 public:
 	ALT_MEMBER_GETTER(uint32_t, m_size, Size);

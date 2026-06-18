@@ -297,7 +297,7 @@ public:
 /*0x20*/ float           UpDownDist;
 /*0x28*/ PlayerClient*   pSpawn;
 /*0x30*/ bool            bApplyGravity;
-/*0x31*/
+/*0x34*/
 };
 
 class PlayerPhysicsClient : public PlayerPhysics
@@ -462,7 +462,7 @@ public:
 /*0x1b0*/ int               SplineRiderID;
 /*0x1b8*/ uint64_t          LockID;
 /*0x1c0*/ uint32_t          EncounterLockState;
-/*0x1c8*/
+/*0x1c4*/
 
 	EQLIB_OBJECT unsigned int GetId() const { return SpawnID; }
 

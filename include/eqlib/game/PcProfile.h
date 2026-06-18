@@ -394,7 +394,7 @@ public:
 /*0x6e98*/ int                                   SoleEnabledZoneID;
 /*0x6e9c*/ int                                   NewBodyTint;
 /*0x6ea0*/ int                                   CurrentMercenaryIndex;
-/*0x6ea8*/
+/*0x6ea4*/
 
 	AbilityInfo& GetAlternateAbility(int index) { return AAList[index]; }
 	const AbilityInfo& GetAlternateAbility(int index) const { return AAList[index]; }
