@@ -50,7 +50,7 @@ enum EPlace
 	CanPlaceAndGoto,
 };
 
-constexpr size_t zoneHeader_size = 0x2A4; // @sizeof(zoneHeader) :: 2026-06-11 (live) @ 0x140EB47D4
+constexpr size_t zoneHeader_size = 0x2A4; // @sizeof(zoneHeader) :: 2026-07-09 (live) @ 0x140EB77B4
 
 struct [[offsetcomments]] zoneHeader
 {
@@ -190,12 +190,13 @@ public:
 	EQLIB_OBJECT int CastSpell(const CVector3& pos);
 
 /*0x00*/ int             slot;           // the gem the spell below is memmed in... 0-11
+/*0x04*/ uint8_t         Unknown0x4[0x4];
 /*0x08*/ PSPELL          spell;
 /*0x10*/ ItemGlobalIndex itemLocation;
 /*0x1c*/ ItemSpellTypes  itemSpellType;
 /*0x20*/ float           rangeSquared;
 /*0x24*/ bool            cursorVisible;
-/*0x28*/
+/*0x25*/
 };
 
 using CTargetRing DEPRECATE("Use FreeTargetTracker instead of CTargetRing") = CTargetRing;
@@ -214,8 +215,7 @@ struct [[offsetcomments]] EQSuccessfulHit
 /*0x11*/ float         HitHeading;
 /*0x15*/ float         HitPitch;
 /*0x19*/ bool          bSecondary;
-/*0x1a*/ uint8_t       Unknown0x1A[6];
-/*0x20*/
+/*0x1a*/
 };
 #pragma pack(pop)
 using pEQSuccessfulHit DEPRECATE("Use EQSuccessfulHit* instead of pEQSuccessfulHit") = EQSuccessfulHit*;
@@ -251,7 +251,7 @@ struct [[offsetcomments]] EQCameraOptions
 /*0x10*/ float             pitch;
 /*0x14*/ float             zoom;
 /*0x18*/ bool              changeable;
-/*0x1c*/
+/*0x19*/
 };
 
 struct [[offsetcomments]] EQGameOptions
@@ -261,11 +261,13 @@ struct [[offsetcomments]] EQGameOptions
 /*0x08*/ int               anonymous;
 /*0x0c*/ int               trade;
 /*0x10*/ bool              guildInvites;
+/*0x11*/ uint8_t           Unknown0x11[0x2];
+/*0x13*/ bool              petNames;
 /*0x14*/ int               sky;
 /*0x18*/ bool              lod;
 /*0x19*/ bool              pcNames;
 /*0x1a*/ bool              npcNames;
-/*0x1b*/ bool              petNames;
+/*0x1b*/ uint8_t           Unknown0x1b[0x1];
 /*0x1c*/ bool              mercNames;
 /*0x1d*/ bool              targetHealth;
 /*0x1e*/ bool              petOwnerNames;
@@ -314,7 +316,7 @@ struct [[offsetcomments]] EQGameOptions
 
 
 // size of EverQuestinfo is the distance from this byte to the end of the struct
-constexpr size_t EverQuestinfo_size = 0x75278; // @sizeof(EverQuestinfo) :: 2026-06-11 (live) @ 0x140EB45E0
+constexpr size_t EverQuestinfo_size = 0x75278; // @sizeof(EverQuestinfo) :: 2026-07-09 (live) @ 0x140EB75C0
 
 struct [[offsetcomments]] EverQuestinfo
 {
@@ -716,7 +718,7 @@ public:
 };
 
 
-constexpr size_t CEverQuest_size = 0x19710; // @sizeof(CEverQuest) :: 2026-06-11 (live) @ 0x140353BE3
+constexpr size_t CEverQuest_size = 0x19710; // @sizeof(CEverQuest) :: 2026-07-09 (live) @ 0x140356C83
 
 class [[offsetcomments]] CEverQuest : public CEverQuestBase, public UniversalChatProxyHandler, public PopDialogHandler
 {

@@ -336,7 +336,7 @@ struct PetObjectData;
 
 constexpr int MAX_LINKED_SPELL_TIMERS = 25;
 
-constexpr size_t PcProfile_size = 0x6EA8; // @sizeof(PcProfile) :: 2026-06-11 (live) @ 0x14067E974
+constexpr size_t PcProfile_size = 0x6EA8; // @sizeof(PcProfile) :: 2026-07-09 (live) @ 0x1406826E4
 
 class [[offsetcomments]] PcProfile : public BaseProfile
 {
@@ -358,6 +358,7 @@ public:
 /*0x53fc*/ BandolierSet                          Bandolier[MAX_BANDOLIER_ITEMS];
 /*0x6cfc*/ BenefitSelection                      ActiveTributeBenefits[5];
 /*0x6d24*/ BenefitSelection                      ActiveTrophyTributeBenefits[10];
+/*0x6d74*/ uint8_t                               Unknown0x6d74[0x4];
 /*0x6d78*/ ItemContainer                         GuildTributeBenefitItems;
 /*0x6da0*/ ItemContainer                         GuildTrophyTributeBenefitItems;
 /*0x6dc8*/ ItemContainer                         TradeskillDepotItems;
@@ -393,7 +394,7 @@ public:
 /*0x6e98*/ int                                   SoleEnabledZoneID;
 /*0x6e9c*/ int                                   NewBodyTint;
 /*0x6ea0*/ int                                   CurrentMercenaryIndex;
-/*0x6ea4*/
+/*0x6ea8*/
 
 	AbilityInfo& GetAlternateAbility(int index) { return AAList[index]; }
 	const AbilityInfo& GetAlternateAbility(int index) const { return AAList[index]; }

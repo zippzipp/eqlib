@@ -248,6 +248,7 @@ public:
 /*0x18*/ int                      nonRealEstateItemCount;
 /*0x1c*/ int                      npcItemCount;
 /*0x20*/ int                      upkeepItemCount;
+/*0x24*/ uint8_t                  Unknown0x24[0x4];
 /*0x28*/ RealEstateItemsContainer realEstateItems;
 /*0x40*/
 };
@@ -297,6 +298,7 @@ using RealEstateCostSubComponentArray = ArrayClass<RealEstateCostSubComponent>;
 struct [[offsetcomments]] RealEstateCostComponent
 {
 /*0x00*/ int id;
+/*0x04*/ uint8_t Unknown0x4[0x4];
 /*0x08*/ RealEstateCostSubComponentArray subComponents;
 /*0x20*/
 };
@@ -305,6 +307,7 @@ using RealEstateCostComponentArray = ArrayClass<RealEstateCostComponent>;
 struct [[offsetcomments]] RealEstateCostSchemeData
 {
 /*0x00*/ int costId;
+/*0x04*/ uint8_t Unknown0x4[0x4];
 /*0x08*/ RealEstateCostComponentArray costComponents;
 /*0x20*/
 };
