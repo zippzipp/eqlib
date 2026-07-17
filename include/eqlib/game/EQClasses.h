@@ -1229,7 +1229,6 @@ public:
 using SKILL = EQ_Skill;
 using PSKILL = EQ_Skill*;
 
-
 constexpr size_t SkillManager_size = 0x399C80; // @sizeof(SkillManager) :: 2026-07-09 (live) @ 0x140273617
 
 class [[offsetcomments]] SkillManager

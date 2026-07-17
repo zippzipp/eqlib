@@ -25,6 +25,7 @@
 #include "eqlib/game/UITypes.h"
 #include "eqlib/game/XMLData.h"
 
+#include "eqstd/memory.h"
 #include "mq/base/Color.h"
 
 namespace eqlib {
@@ -741,7 +742,6 @@ public:
 /*0x074*/ int                ZLayer;
 /*0x078*/ bool               dShow;
 /*0x079*/ bool               bEnableShowBorder;
-/*0x07a*/ uint32_t           BackgroundDrawType;
 /*0x080*/ CTextObjectInterface* pTipTextObject;
 /*0x088*/ bool               bLeftAnchoredToLeft;
 /*0x08c*/ COLORREF           BGColor;
@@ -749,7 +749,7 @@ public:
 /*0x098*/ CLayoutStrategy*   pLayoutStrategy;
 /*0x0a0*/ int                VScrollPos;
 /*0x0a8*/ ControllerBase*    pController;
-/*0x0b0*/ bool               bClickThrough;
+/*0x0b0*/ bool               bClickThroughActive;
 /*0x0b1*/ bool               ValidCXWnd;
 /*0x0b4*/ uint32_t           FadeDelay;
 /*0x0b8*/ bool               Faded;
@@ -776,12 +776,12 @@ public:
 /*0x118*/ bool               bBringToTopWhenClicked;
 /*0x11c*/ int                BlinkDuration;
 /*0x120*/ int                LeftOffset;
-/*0x124*/ uint8_t            Unknown0x124[0x4];
+/*0x124*/ uint32_t           BackgroundDrawType;
 /*0x128*/ bool               bActive;
 /*0x12c*/ CXRect             ClipRectScreen;
 /*0x140*/ int64_t            Data;
 /*0x148*/ uint32_t           TransitionStartTick;
-/*0x14c*/ int                BlinkStartTimer;
+/*0x14c*/ uint32_t           BlinkStartTimer;
 /*0x150*/ bool               bMaximized;
 /*0x151*/ uint8_t            TargetAlpha;
 /*0x154*/ int                ParentAndContextMenuArrayIndex;
@@ -805,7 +805,7 @@ public:
 /*0x1c8*/ int                Transition;
 /*0x1cc*/ bool               bHCenterTooltip;
 /*0x1d0*/ CXStr              XMLToolTip;
-/*0x1d8*/ bool               bClickThroughMenuItemStatus;
+/*0x1d8*/ bool               bClickThrough;
 /*0x1d9*/ bool               bEscapable;
 /*0x1da*/ bool               bCaptureTitle;
 /*0x1db*/ uint8_t            bResizableMask;
@@ -837,13 +837,14 @@ public:
 /*0x25c*/ uint32_t           WindowStyle;
 /*0x260*/ bool               bUsesClassicUI;
 /*0x261*/ bool               bMouseOverEvent;
-/*0x268*/
+/*0x264*/
 // @end: CXWnd Members
 
 	ALT_MEMBER_ALIAS(bool, bEscapable, CloseOnESC);
 	ALT_MEMBER_ALIAS_DEPRECATED(bool, bEnableShowBorder, bBorder, "Use bEnableShowBorder instead of bBorder");
 	ALT_MEMBER_ALIAS_DEPRECATED(bool, bShowBorder, bBorder2, "Use bShowBorder instead of bBorder2");
 	ALT_MEMBER_ALIAS(bool, bClickThrough, Clickable);
+	ALT_MEMBER_ALIAS(bool, bClickThrough, bClickThroughMenuItemStatus);
 };
 
 inline namespace deprecated {
@@ -911,7 +912,7 @@ public:
 /*0x268*/ bool                         bControlsCreated;
 /*0x270*/ CXStr                        SidlText;
 /*0x278*/ CScreenTemplate*             SidlPiece;
-/*0x280*/ ArrayClass<CRadioGroup*>     RadioGroup;
+/*0x280*/ ArrayClass<eqstd::shared_ptr<CRadioGroup>> RadioGroup;
 /*0x298*/ bool                         bInitVisibility;
 /*0x299*/ bool                         bVisibleBeforeResize;
 /*0x29c*/ int                          IniFlags;
@@ -1177,7 +1178,6 @@ public:
 //============================================================================
 // CEQXWndManager
 //============================================================================
-
 constexpr size_t CEQXWndManager_size = 0x298; // @sizeof(CEQXWndManager) :: 2026-07-09 (live) @ 0x1401A4385
 
 class [[offsetcomments]] CEQXWndManager : public CXWndManager

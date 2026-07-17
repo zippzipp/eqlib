@@ -264,7 +264,7 @@ namespace eqmain {
 // CXWnd
 //============================================================================
 
-constexpr size_t CXWnd_size = 0x268; // @sizeof(CXWnd) :: 2026-07-09 (live) @ 0x1405DDD86
+constexpr size_t CXWnd_size = 0x260; // @sizeof(CXWnd, eqmain) :: 2026-07-09 (live) @ 0x1800D986B
 constexpr size_t CXWnd_vftable_size = 0x2D0;
 
 class [[offsetcomments]] CXWnd
@@ -682,7 +682,6 @@ public:
 /*0x074*/ int                ZLayer;
 /*0x078*/ bool               dShow;
 /*0x079*/ bool               bEnableShowBorder;
-/*0x07a*/ uint32_t           BackgroundDrawType;
 /*0x080*/ CTextObjectInterface* pTipTextObject;
 /*0x088*/ bool               bLeftAnchoredToLeft;
 /*0x08c*/ COLORREF           BGColor;
@@ -717,7 +716,7 @@ public:
 /*0x118*/ bool               bBringToTopWhenClicked;
 /*0x11c*/ int                BlinkDuration;
 /*0x120*/ int                LeftOffset;
-/*0x124*/ uint8_t            Unknown0x124[0x4];
+/*0x124*/ uint32_t           BackgroundDrawType;
 /*0x128*/ bool               bActive;
 /*0x12c*/ CXRect             ClipRectScreen;
 /*0x140*/ int64_t            Data;
@@ -776,9 +775,7 @@ public:
 /*0x250*/ CStaticTintedBlendAnimationTemplate* TitlePiece;
 /*0x258*/ uint32_t           XMLIndex;
 /*0x25c*/ uint32_t           WindowStyle;
-/*0x260*/ bool               bUsesClassicUI;
-/*0x261*/ bool               bMouseOverEvent;
-/*0x268*/
+/*0x260*/
 // @end: CXWnd Members
 };
 
@@ -788,39 +785,39 @@ SIZE_CHECK2(CXWnd_vftable, CXWnd::VirtualFunctionTable, CXWnd_vftable_size);
 class CStmlWnd : public CXWnd
 {
 public:
-/*0x248*/ CXStr              STMLText;
+/*0x260*/ CXStr              STMLText;
 };
 
 class [[offsetcomments]] CEditBaseWnd : public CXWnd
 {
 public:
-/*0x268*/ eTextAlign   eAlign = eta_Left;
-/*0x26c*/ int          StartPos = 0;
-/*0x270*/ int          EndPos = 0;
-/*0x274*/ int          MaxChars = -1;
-/*0x278*/ int          MaxBytesUTF8 = -1;
-/*0x280*/ CXStr        InputText;
-/*0x288*/ int          TagPrintableStarts[EDITWND_MAX_TAGS];
-/*0x2b0*/ int          TagPrintableEnds[EDITWND_MAX_TAGS];
-/*0x2d8*/ int          TagOriginalStarts[EDITWND_MAX_TAGS];
-/*0x300*/ int          TagOriginalEnds[EDITWND_MAX_TAGS];
-/*0x328*/ int          TagDynamicSize[EDITWND_MAX_TAGS];
-/*0x350*/ int          TagCodes[EDITWND_MAX_TAGS];
-/*0x378*/ CXStr        TagStrings[EDITWND_MAX_TAGS];
-/*0x3c8*/ int          TagCount;
-/*0x3cc*/ uint32_t     EditStyle;
-/*0x3d0*/
+/*0x260*/ eTextAlign   eAlign = eta_Left;
+/*0x264*/ int          StartPos = 0;
+/*0x268*/ int          EndPos = 0;
+/*0x26c*/ int          MaxChars = -1;
+/*0x270*/ int          MaxBytesUTF8 = -1;
+/*0x278*/ CXStr        InputText;
+/*0x280*/ int          TagPrintableStarts[EDITWND_MAX_TAGS];
+/*0x2a8*/ int          TagPrintableEnds[EDITWND_MAX_TAGS];
+/*0x2d0*/ int          TagOriginalStarts[EDITWND_MAX_TAGS];
+/*0x2f8*/ int          TagOriginalEnds[EDITWND_MAX_TAGS];
+/*0x320*/ int          TagDynamicSize[EDITWND_MAX_TAGS];
+/*0x348*/ int          TagCodes[EDITWND_MAX_TAGS];
+/*0x370*/ CXStr        TagStrings[EDITWND_MAX_TAGS];
+/*0x3c0*/ int          TagCount;
+/*0x3c4*/ uint32_t     EditStyle;
+/*0x3c8*/
 };
 
 class [[offsetcomments]] CListWnd : public CXWnd
 {
 public:
-/*0x268*/ int                 Unknown0x1f0;
-/*0x270*/ ArrayClass<SListWndLine> ItemsArray;
-/*0x288*/ ArrayClass<SListWndColumn> Columns;
-/*0x2a0*/ int                 CurSel;
-/*0x2a4*/ int                 CurCol;
-/*0x2a8*/
+/*0x260*/ int                 Unknown0x1f0;
+/*0x268*/ ArrayClass<SListWndLine> ItemsArray;
+/*0x280*/ ArrayClass<SListWndColumn> Columns;
+/*0x298*/ int                 CurSel;
+/*0x29c*/ int                 CurCol;
+/*0x2a0*/
 	CXStr GetItemText(int row, int col)
 	{
 		if (row < 0 || row >= ItemsArray.Count)

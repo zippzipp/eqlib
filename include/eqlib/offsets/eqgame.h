@@ -37,7 +37,7 @@
 
 // Misc Globals
 #define __do_loot_x                                                0x140231E50
-#define __gfMaxZoomCameraDistance_x                                0x140856B28
+#define __gfMaxZoomCameraDistance_x                                0x140926F18
 #define __gfMaxCameraDistance_x                                    0x140AD0C64
 #define __CurrentSocial_x                                          0x140C230E4 // CActionsWnd::StopSocial
 #define __BindList_x                                               0x140D62970
@@ -182,7 +182,7 @@
 // CAdvancedLootWnd
 #define CAdvancedLootWnd__DoAdvLootAction_x                        0x1400B3740
 #define CAdvancedLootWnd__DoSharedAdvLootAction_x                  0x1400ABDD0
-#define CAdvancedLootWnd__AddPlayerToList_x                        0x140871758
+#define CAdvancedLootWnd__AddPlayerToList_x                        0x1400A8180
 #define CAdvancedLootWnd__UpdateMasterLooter_x                     0x1400B40A0
 
 // AltAdvManager
@@ -205,7 +205,7 @@
 #define CharacterZoneClient__Cur_Mana_x                            0x1400F2A80
 #define CharacterZoneClient__FindAffectSlot_x                      0x1400E0430
 #define CharacterZoneClient__GetAdjustedSkill_x                    0x1400F91D0
-#define CharacterZoneClient__GetBaseSkill_x                        0x140107970  // CharacterZoneClient::Skill (inlineable)
+#define CharacterZoneClient__GetBaseSkill_x                        0x140108470
 #define CharacterZoneClient__GetCastingTimeModifier_x              0x1400E18D0
 #define CharacterZoneClient__GetCurrentMod_x                       0x1400F0410
 #define CharacterZoneClient__GetCursorItemCount_x                  0x1400FAA60
@@ -302,7 +302,7 @@
 
 // CContainerWnd
 #define CContainerWnd__HandleCombine_x                             0x1403D2F10
-#define CContainerWnd__SetContainer_x                              0x140432F90
+#define CContainerWnd__SetContainer_x                              0x1403D4070
 #define CContainerWnd__vftable_x                                   0x140A05A10
 
 // CDisplay
@@ -361,6 +361,7 @@
 #define CEverQuest__RightClickedOnPlayer_x                         0x14029CE90
 #define CEverQuest__RMouseUp_x                                     0x140296530
 #define CEverQuest__SetGameState_x                                 0x1402A25B0
+#define CEverQuest__StartCasting_x                                 0x1402A3950
 #define CEverQuest__UPCNotificationFlush_x                         0x1402A7FF0 // CEverQuest__UniversalChatProxyNotificationFlush
 #define CEverQuest__IssuePetCommand_x                              0x14028B770
 #define CEverQuest__ReportSuccessfulHeal_x                         0x140297920
@@ -378,7 +379,7 @@
 
 //CHotButton
 #define CHotButton__SetButtonSize_x                                0x1402C3C90
-#define CHotButton__SetCheck_x                                     0x1404115D0
+#define CHotButton__SetCheck_x                                     0x1402C3F60
 
 // CInvSlotMgr
 #define CInvSlotMgr__FindInvSlot_x                                 0x140429B00
@@ -669,7 +670,7 @@
 #define EQ_LoadingS__Array_x                                       0x140D5DD60
 
 // PcClient
-#define PcBase__GetAlternateAbilityId_x                            0x140688AF0
+#define PcBase__GetAlternateAbilityId_x                            0x140688A80
 #define PcBase__GetCombatAbility_x                                 0x140689310
 #define PcBase__GetCombatAbilityTimer_x                            0x1406893F0
 #define PcBase__GetItemContainedRealEstateIds_x                    0x140689C10

@@ -1109,7 +1109,7 @@ public:
 /*0x0f8*/ int                   Power;
 /*0x100*/ int64_t               DontKnow;
 /*0x108*/ int                   ActorTag1;
-/*0x110*/
+/*0x10c*/
 // @end: ItemBase Members
 
 	EQLIB_OBJECT ItemBase();
@@ -1257,6 +1257,7 @@ public:
 
 constexpr size_t ItemClient_size = 0x128; // @sizeof(ItemClient) :: 2026-07-09 (live) @ 0x1401F09C9
 
+
 class [[offsetcomments]] ItemClient : public ItemBase
 {
 	FORCE_SYMBOLS;
@@ -1269,7 +1270,6 @@ public:
 
 	EQLIB_OBJECT static ItemPtr Create() { return eqstd::make_shared<ItemClient>(); }
 
-/*0x108*/ uint8_t           Unknown0x108[0x8];
 /*0x110*/ ItemDefinitionPtr SharedItemDef;
 /*0x120*/ CXStr             ClientString;
 /*0x128*/
